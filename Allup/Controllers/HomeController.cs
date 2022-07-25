@@ -57,6 +57,8 @@ namespace Allup.Controllers
 
             homeVM.Sliders = _context.Sliders.ToList();
 
+            homeVM.Banners = _context.Banners.ToList();
+
             return View(homeVM);
         }
     }

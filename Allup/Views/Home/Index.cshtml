@@ -1,26 +1,17 @@
-﻿@{
+﻿@model 
+
+@{
     ViewBag.Title = "Allup - Electronics Responsive eCommerce HTML Template";
 }
 
 <!--====== Slider Part Start ======-->
 
     <section class="slider-area slider-active">
-        <div class="single-slider">
-            <div class="slider-image">
-                <img src="~/assets/images/slider-1.jpg" alt="slider">
-            </div>
-            <div class="slider-content-wrapper">
-                <div class="container-fluid custom-container">
-                    <div class="slider-content">
-                        <h4 data-animation="fadeInDown" data-delay="0.5s" class="sub-title">Save $120 when you buy</h4>
-                        <h1 data-animation="fadeInLeft" data-delay="0.5s" class="main-title "><span>2020 Virtual Reality </span> Fulldive VR.</h1>
-                        <p data-animation="fadeInRightBig" data-delay="0.5s">Explore and immerse in exciting 360 content with Fulldive’s all-in-one virtual reality platform</p>
-                        <a data-animation="zoomIn" data-delay="0.5s" class="main-btn " href="single-product.html">Shop Now</a>
-                    </div>
-                </div> <!-- container -->
-            </div>
-        </div> <!-- single slider -->
-        <div class="single-slider">
+        @foreach (var item in Model.Ca)
+        {
+
+        }
+        <!--<div class="single-slider">
             <div class="slider-image">
                 <img src="~/assets/images/slider-2.jpg" alt="slider">
             </div>
@@ -32,9 +23,9 @@
                         <p data-animation="fadeInRightBig" data-delay="0.5s">Explore and immerse in exciting 360 content with Fulldive’s all-in-one virtual reality platform</p>
                         <a data-animation="zoomIn" data-delay="0.5s" class="main-btn " href="single-product.html">Shop Now</a>
                     </div>
-                </div> <!-- container -->
-            </div>
-        </div> <!-- single slider -->
+                </div>--> <!-- container -->
+            <!--</div>
+        </div>--> <!-- single slider -->
     </section>
 
     <!--====== Slider Part Ends ======-->

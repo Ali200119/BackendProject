@@ -22,6 +22,7 @@ namespace Allup.DAL
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Quotes> Quotes { get; set; }
         public DbSet<Slider> Sliders { get; set; }
+        public DbSet<Banner> Banners { get; set; }
 
 
 
@@ -100,25 +101,26 @@ namespace Allup.DAL
                 new ProductImage { Id = 3, ImageURL = "product-3.jpg", IsMain = true, ProductId = 2 },
                 new ProductImage { Id = 4, ImageURL = "product-4.jpg", IsMain = false, ProductId = 2 },
                 new ProductImage { Id = 5, ImageURL = "product-5.jpg", IsMain = true, ProductId = 3 },
-                new ProductImage { Id = 6, ImageURL = "product-6.jpg", IsMain = false, ProductId = 3 },
-                new ProductImage { Id = 7, ImageURL = "product-7.jpg", IsMain = true, ProductId = 4 },
-                new ProductImage { Id = 8, ImageURL = "product-8.jpg", IsMain = false, ProductId = 4 },
-                new ProductImage { Id = 9, ImageURL = "product-9.jpg", IsMain = true, ProductId = 5 },
-                new ProductImage { Id = 10, ImageURL = "product-10.jpg", IsMain = false, ProductId = 5 },
-                new ProductImage { Id = 11, ImageURL = "product-11.jpg", IsMain = true, ProductId = 6 },
-                new ProductImage { Id = 12, ImageURL = "product-12.jpg", IsMain = false, ProductId = 6 },
-                new ProductImage { Id = 13, ImageURL = "product-13.jpg", IsMain = true, ProductId = 7 },
-                new ProductImage { Id = 14, ImageURL = "product-14.jpg", IsMain = false, ProductId = 7 },
-                new ProductImage { Id = 15, ImageURL = "product-15.jpg", IsMain = true, ProductId = 8 },
-                new ProductImage { Id = 16, ImageURL = "product-16.jpg", IsMain = false, ProductId = 8 },
-                new ProductImage { Id = 17, ImageURL = "product-17.jpg", IsMain = true, ProductId = 9 },
-                new ProductImage { Id = 18, ImageURL = "product-18.jpg", IsMain = false, ProductId = 9 },
-                new ProductImage { Id = 19, ImageURL = "product-19.jpg", IsMain = true, ProductId = 10 },
-                new ProductImage { Id = 20, ImageURL = "product-20.jpg", IsMain = false, ProductId = 10 },
-                new ProductImage { Id = 21, ImageURL = "product-21.jpg", IsMain = true, ProductId = 11 },
-                new ProductImage { Id = 22, ImageURL = "product-22.jpg", IsMain = false, ProductId = 11 },
-                new ProductImage { Id = 23, ImageURL = "product-23.jpg", IsMain = true, ProductId = 12 },
-                new ProductImage { Id = 24, ImageURL = "product-24.jpg", IsMain = false, ProductId = 12 }
+                new ProductImage { Id = 6, ImageURL = "product-6.jpg", IsMain = true, ProductId = 4 },
+                new ProductImage { Id = 7, ImageURL = "product-7.jpg", IsMain = false, ProductId = 4 },
+                new ProductImage { Id = 8, ImageURL = "product-8.jpg", IsMain = true, ProductId = 5 },
+                new ProductImage { Id = 9, ImageURL = "product-3.jpg", IsMain = true, ProductId = 6 },
+                new ProductImage { Id = 10, ImageURL = "product-9.jpg", IsMain = false, ProductId = 6 },
+                new ProductImage { Id = 11, ImageURL = "product-10.jpg", IsMain = true, ProductId = 7 },
+                new ProductImage { Id = 12, ImageURL = "product-11.jpg", IsMain = false, ProductId = 7 },
+                new ProductImage { Id = 13, ImageURL = "product-12.jpg", IsMain = true, ProductId = 8 },
+                new ProductImage { Id = 14, ImageURL = "product-16.jpg", IsMain = true, ProductId = 9 },
+                new ProductImage { Id = 15, ImageURL = "product-6.jpg", IsMain = false, ProductId = 9 },
+                new ProductImage { Id = 16, ImageURL = "product-13.jpg", IsMain = true, ProductId = 10 },
+                new ProductImage { Id = 17, ImageURL = "product-14.jpg", IsMain = true, ProductId = 11 },
+                new ProductImage { Id = 18, ImageURL = "product-15.jpg", IsMain = false, ProductId = 11 },
+                new ProductImage { Id = 19, ImageURL = "product-9.jpg", IsMain = true, ProductId = 12 }
+            );
+
+            modelBuilder.Entity<Banner>().HasData(
+
+                new Banner { Id = 1, Name = "Redmi 6 Pro", ImageURL = "banner-1.png"},
+                new Banner { Id = 2, Name = "Headphone", ImageURL = "banner-2.png" }
             );
         }
     }

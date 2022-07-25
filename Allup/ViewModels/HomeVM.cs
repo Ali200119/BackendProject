@@ -15,5 +15,6 @@ namespace Allup.ViewModels
         public List<ProductImage> ProductImages { get; set; }
         public List<Quotes> Quotes { get; set; }
         public List<Slider> Sliders { get; set; }
+        public List<Banner> Banners { get; set; }
     }
 }

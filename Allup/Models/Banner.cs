@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Allup.Models
 {
-    public class Category
+    public class Banner
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -13,10 +15,5 @@ namespace Allup.Models
         [NotMapped]
         public IFormFile Image { get; set; }
         public string ImageURL { get; set; }
-        public List<Product> Products { get; set; }
-        public bool IsDeleted { get; set; }
-        public Nullable<DateTime> CreatedAt { get; set; }
-        public Nullable<DateTime> UpdatedAt { get; set; }
-        public Nullable<DateTime> DeletedAt { get; set; }
     }
 }
