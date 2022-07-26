@@ -1,10 +1,11 @@
 ﻿using Allup.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
 namespace Allup.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -96,23 +97,23 @@ namespace Allup.DAL
             modelBuilder.Entity<ProductImage>().HasData(
 
                 new ProductImage { Id = 1, ImageURL = "product-1.jpg", IsMain = true, ProductId = 1 },
-                new ProductImage { Id = 2, ImageURL = "product-2.jpg", IsMain = false, ProductId = 1 },
+                new ProductImage { Id = 2, ImageURL = "product-2.jpg", IsMain = false, ProductId = 1, IsSecond = true },
                 new ProductImage { Id = 3, ImageURL = "product-3.jpg", IsMain = true, ProductId = 2 },
-                new ProductImage { Id = 4, ImageURL = "product-4.jpg", IsMain = false, ProductId = 2 },
+                new ProductImage { Id = 4, ImageURL = "product-4.jpg", IsMain = false, ProductId = 2, IsSecond = true },
                 new ProductImage { Id = 5, ImageURL = "product-5.jpg", IsMain = true, ProductId = 3 },
                 new ProductImage { Id = 6, ImageURL = "product-6.jpg", IsMain = true, ProductId = 4 },
-                new ProductImage { Id = 7, ImageURL = "product-7.jpg", IsMain = false, ProductId = 4 },
+                new ProductImage { Id = 7, ImageURL = "product-7.jpg", IsMain = false, ProductId = 4, IsSecond = true },
                 new ProductImage { Id = 8, ImageURL = "product-8.jpg", IsMain = true, ProductId = 5 },
                 new ProductImage { Id = 9, ImageURL = "product-3.jpg", IsMain = true, ProductId = 6 },
-                new ProductImage { Id = 10, ImageURL = "product-9.jpg", IsMain = false, ProductId = 6 },
+                new ProductImage { Id = 10, ImageURL = "product-9.jpg", IsMain = false, ProductId = 6, IsSecond = true },
                 new ProductImage { Id = 11, ImageURL = "product-10.jpg", IsMain = true, ProductId = 7 },
-                new ProductImage { Id = 12, ImageURL = "product-11.jpg", IsMain = false, ProductId = 7 },
+                new ProductImage { Id = 12, ImageURL = "product-11.jpg", IsMain = false, ProductId = 7, IsSecond = true },
                 new ProductImage { Id = 13, ImageURL = "product-12.jpg", IsMain = true, ProductId = 8 },
                 new ProductImage { Id = 14, ImageURL = "product-16.jpg", IsMain = true, ProductId = 9 },
-                new ProductImage { Id = 15, ImageURL = "product-6.jpg", IsMain = false, ProductId = 9 },
+                new ProductImage { Id = 15, ImageURL = "product-6.jpg", IsMain = false, ProductId = 9, IsSecond = true },
                 new ProductImage { Id = 16, ImageURL = "product-13.jpg", IsMain = true, ProductId = 10 },
                 new ProductImage { Id = 17, ImageURL = "product-14.jpg", IsMain = true, ProductId = 11 },
-                new ProductImage { Id = 18, ImageURL = "product-15.jpg", IsMain = false, ProductId = 11 },
+                new ProductImage { Id = 18, ImageURL = "product-15.jpg", IsMain = false, ProductId = 11, IsSecond = true },
                 new ProductImage { Id = 19, ImageURL = "product-9.jpg", IsMain = true, ProductId = 12 }
             );
 

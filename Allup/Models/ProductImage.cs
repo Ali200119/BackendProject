@@ -12,6 +12,8 @@ namespace Allup.Models
         public IFormFile Image { get; set; }
         public string ImageURL { get; set; }
         public bool IsMain { get; set; }
+
+        public bool  IsSecond { get; set; }
         public int ProductId { get; set; }
         public Product Product { get; set; }
     }

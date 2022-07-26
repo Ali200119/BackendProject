@@ -59,6 +59,25 @@ namespace Allup.Controllers
 
             homeVM.Banners = _context.Banners.ToList();
 
+            homeVM.New = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Include(p => p.ProductImages)
+                .Where(p=>p.IsNewArrival)
+                .ToList();
+
+            homeVM.Bestseller = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p => p.IsBestseller)
+                .ToList();
+
+            homeVM.Featured = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p => p.IsFeatured)
+                .ToList();
+
             return View(homeVM);
         }
     }
