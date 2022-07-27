@@ -4,14 +4,16 @@ using Allup.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Allup.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220727165957_initialProject")]
+    partial class initialProject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,7 +114,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 893, DateTimeKind.Local).AddTicks(9503),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(5207),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-1.jpg",
                             Title = "This is First Post For XipBlog"
@@ -120,7 +122,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 894, DateTimeKind.Local).AddTicks(241),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(6031),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-2.jpg",
                             Title = "This is Second Post For XipBlog"
@@ -128,7 +130,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 894, DateTimeKind.Local).AddTicks(266),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(6056),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-3.jpg",
                             Title = "This is Third Post For XipBlog"
@@ -339,64 +341,6 @@ namespace Allup.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Allup.Models.Features", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageURL")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Features");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Free shipping on all US order",
-                            ImageURL = "icon1.png",
-                            Title = "Free Shipping"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Contact us 24 hours a day",
-                            ImageURL = "icon2.png",
-                            Title = "Support 24/7"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "You have 30 days to Return",
-                            ImageURL = "icon3.png",
-                            Title = "100% Money Back"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "If goods have problems",
-                            ImageURL = "icon4.png",
-                            Title = "90 Days Return"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "We ensure secure payment",
-                            ImageURL = "icon5.png",
-                            Title = "Payment Secure"
-                        });
-                });
-
             modelBuilder.Entity("Allup.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -529,7 +473,7 @@ namespace Allup.Migrations
                             Id = 1,
                             BrandId = 3,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(2664),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 519, DateTimeKind.Local).AddTicks(7803),
                             IsBestseller = true,
                             IsComputer = true,
                             IsDeleted = false,
@@ -545,7 +489,7 @@ namespace Allup.Migrations
                             Id = 2,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(8936),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4072),
                             DiscountPrice = 21.899999999999999,
                             IsBestseller = true,
                             IsComputer = false,
@@ -562,7 +506,7 @@ namespace Allup.Migrations
                             Id = 3,
                             BrandId = 6,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9165),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4321),
                             IsBestseller = true,
                             IsComputer = false,
                             IsDeleted = false,
@@ -578,7 +522,7 @@ namespace Allup.Migrations
                             Id = 4,
                             BrandId = 1,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9346),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4510),
                             IsBestseller = true,
                             IsComputer = false,
                             IsDeleted = false,
@@ -594,7 +538,7 @@ namespace Allup.Migrations
                             Id = 5,
                             BrandId = 4,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9359),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4523),
                             IsBestseller = true,
                             IsComputer = true,
                             IsDeleted = false,
@@ -610,7 +554,7 @@ namespace Allup.Migrations
                             Id = 6,
                             BrandId = 1,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9365),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4530),
                             IsBestseller = true,
                             IsComputer = false,
                             IsDeleted = false,
@@ -626,7 +570,7 @@ namespace Allup.Migrations
                             Id = 7,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9376),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4542),
                             IsBestseller = false,
                             IsComputer = false,
                             IsDeleted = false,
@@ -642,7 +586,7 @@ namespace Allup.Migrations
                             Id = 8,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9378),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4543),
                             IsBestseller = false,
                             IsComputer = false,
                             IsDeleted = false,
@@ -658,7 +602,7 @@ namespace Allup.Migrations
                             Id = 9,
                             BrandId = 3,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9379),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4545),
                             IsBestseller = true,
                             IsComputer = false,
                             IsDeleted = false,
@@ -674,7 +618,7 @@ namespace Allup.Migrations
                             Id = 10,
                             BrandId = 5,
                             CategoryId = 14,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9380),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4546),
                             IsBestseller = false,
                             IsComputer = true,
                             IsDeleted = false,
@@ -690,7 +634,7 @@ namespace Allup.Migrations
                             Id = 11,
                             BrandId = 5,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9382),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4548),
                             IsBestseller = false,
                             IsComputer = false,
                             IsDeleted = false,
@@ -706,7 +650,7 @@ namespace Allup.Migrations
                             Id = 12,
                             BrandId = 6,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9388),
+                            CreatedAt = new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4589),
                             DiscountPrice = 26.100000000000001,
                             IsBestseller = true,
                             IsComputer = false,

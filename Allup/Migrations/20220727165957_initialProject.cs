@@ -132,6 +132,9 @@ namespace Allup.Migrations
                     IsFeatured = table.Column<bool>(nullable: false),
                     IsBestseller = table.Column<bool>(nullable: false),
                     IsNewArrival = table.Column<bool>(nullable: false),
+                    IsComputer = table.Column<bool>(nullable: false),
+                    IsSmartphone = table.Column<bool>(nullable: false),
+                    IsGameConsoles = table.Column<bool>(nullable: false),
                     CreatedAt = table.Column<DateTime>(nullable: true),
                     UpdatedAt = table.Column<DateTime>(nullable: true),
                     DeletedAt = table.Column<DateTime>(nullable: true),
@@ -274,9 +277,9 @@ namespace Allup.Migrations
                 columns: new[] { "Id", "CreatedAt", "Description", "ImageURL", "Title" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(6955), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-1.jpg", "This is First Post For XipBlog" },
-                    { 2, new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(7684), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-2.jpg", "This is Second Post For XipBlog" },
-                    { 3, new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(7707), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-3.jpg", "This is Third Post For XipBlog" }
+                    { 1, new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(5207), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-1.jpg", "This is First Post For XipBlog" },
+                    { 2, new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(6031), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-2.jpg", "This is Second Post For XipBlog" },
+                    { 3, new DateTime(2022, 7, 27, 20, 59, 57, 521, DateTimeKind.Local).AddTicks(6056), "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...", "blog-3.jpg", "This is Third Post For XipBlog" }
                 });
 
             migrationBuilder.InsertData(
@@ -334,21 +337,21 @@ namespace Allup.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "Id", "BrandId", "CategoryId", "CreatedAt", "DeletedAt", "DiscountPrice", "IsBestseller", "IsDeleted", "IsFeatured", "IsNewArrival", "Name", "Price", "UpdatedAt" },
+                columns: new[] { "Id", "BrandId", "CategoryId", "CreatedAt", "DeletedAt", "DiscountPrice", "IsBestseller", "IsComputer", "IsDeleted", "IsFeatured", "IsGameConsoles", "IsNewArrival", "IsSmartphone", "Name", "Price", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 2, 2, 4, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6290), null, 21.899999999999999, true, false, true, false, "Originals Kaval Wind breaker Winter Jacket eu...", 23.899999999999999, null },
-                    { 6, 1, 4, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6319), null, null, true, false, false, true, "Cale 6 eu accumsan massa facilisis Madden by Steve", 29.899999999999999, null },
-                    { 8, 2, 4, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6322), null, null, false, false, true, true, "Juicy Couture Juicy Quilted Terry Track Jacket eu...", 35.899999999999999, null },
-                    { 3, 6, 5, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6314), null, null, true, false, false, true, "Madden by Steve Madden Cale 6 eu accumsan massa...", 11.9, null },
-                    { 4, 1, 5, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6316), null, null, true, false, true, false, "Water and Wind Resistant Insulated Jacket eu massa", 11.9, null },
-                    { 9, 3, 5, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6324), null, null, true, false, false, true, "Trans-Weight Hooded Wind and Water Resistant Shell", 11.9, null },
-                    { 5, 4, 7, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6318), null, null, true, false, true, true, "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..", 18.899999999999999, null },
-                    { 7, 4, 10, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6320), null, null, false, false, true, true, "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker", 23.899999999999999, null },
-                    { 1, 3, 12, new DateTime(2022, 7, 26, 21, 25, 19, 935, DateTimeKind.Local).AddTicks(9848), null, null, true, false, true, true, "Cale 6 eu accumsan massa facilisis Madden by Steve", 11.9, null },
-                    { 11, 5, 12, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6327), null, null, false, false, true, true, "New Balance Fresh Foam LAZR v1 Sport eu accumsan...", 18.899999999999999, null },
-                    { 12, 6, 12, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6333), null, 26.100000000000001, true, false, false, true, "New Balance Arishi Sport v1Couture Juicy eu", 29.0, null },
-                    { 10, 5, 14, new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6325), null, null, false, false, true, false, "New Balance Fresh Foam Kaymin eu accumsan massa...", 11.9, null }
+                    { 2, 2, 4, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4072), null, 21.899999999999999, true, false, false, true, true, false, false, "Originals Kaval Wind breaker Winter Jacket eu...", 23.899999999999999, null },
+                    { 6, 1, 4, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4530), null, null, true, false, false, false, true, true, false, "Cale 6 eu accumsan massa facilisis Madden by Steve", 29.899999999999999, null },
+                    { 8, 2, 4, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4543), null, null, false, false, false, true, true, true, false, "Juicy Couture Juicy Quilted Terry Track Jacket eu...", 35.899999999999999, null },
+                    { 3, 6, 5, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4321), null, null, true, false, false, false, false, true, true, "Madden by Steve Madden Cale 6 eu accumsan massa...", 11.9, null },
+                    { 4, 1, 5, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4510), null, null, true, false, false, true, false, false, true, "Water and Wind Resistant Insulated Jacket eu massa", 11.9, null },
+                    { 9, 3, 5, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4545), null, null, true, false, false, false, false, true, true, "Trans-Weight Hooded Wind and Water Resistant Shell", 11.9, null },
+                    { 5, 4, 7, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4523), null, null, true, true, false, true, false, true, false, "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..", 18.899999999999999, null },
+                    { 7, 4, 10, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4542), null, null, false, false, false, true, false, true, true, "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker", 23.899999999999999, null },
+                    { 1, 3, 12, new DateTime(2022, 7, 27, 20, 59, 57, 519, DateTimeKind.Local).AddTicks(7803), null, null, true, true, false, true, false, true, false, "Cale 6 eu accumsan massa facilisis Madden by Steve", 11.9, null },
+                    { 11, 5, 12, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4548), null, null, false, false, false, true, false, true, true, "New Balance Fresh Foam LAZR v1 Sport eu accumsan...", 18.899999999999999, null },
+                    { 12, 6, 12, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4589), null, 26.100000000000001, true, false, false, false, true, true, false, "New Balance Arishi Sport v1Couture Juicy eu", 29.0, null },
+                    { 10, 5, 14, new DateTime(2022, 7, 27, 20, 59, 57, 520, DateTimeKind.Local).AddTicks(4546), null, null, false, true, false, true, false, false, false, "New Balance Fresh Foam Kaymin eu accumsan massa...", 11.9, null }
                 });
 
             migrationBuilder.InsertData(

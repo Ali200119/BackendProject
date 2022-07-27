@@ -19,5 +19,9 @@ namespace Allup.ViewModels
         public List<Product> New { get; set; }
         public List<Product> Bestseller { get; set; }
         public List<Product> Featured { get; set; }
+        public List<Product> Computer { get; set; }
+        public List<Product> Smartphone { get; set; }
+        public List<Product> GameConsoles { get; set; }
+        public List<Features> Features { get; set; }
     }
 }

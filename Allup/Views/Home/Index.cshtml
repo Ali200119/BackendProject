@@ -124,7 +124,7 @@
                                                         <img class="second-image" src="~/assets/images/product/@image.ImageURL" alt="product">
 
                                                     }
-                                                 }
+                                                }
                                             </a>
                                             <ul class="product-meta">
                                                 <li><a href="#"><i class="icon ion-bag"></i></a></li>
@@ -132,6 +132,10 @@
                                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
                                                 <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
                                             </ul>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                            }
                                         </div>
                                         <div class="product-content">
                                             <ul class="product-rating">
@@ -143,7 +147,10 @@
                                             </ul>
                                             <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
                                             <div class="product-price">
-                                                <span class="regular-price ">$@item.DiscountPrice</span>
+                                                @if (item.DiscountPrice != null)
+                                                {
+                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                }
                                                 <span class="price-sale">$@item.Price</span>
                                             </div>
                                         </div>
@@ -186,6 +193,10 @@
                                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
                                                 <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
                                             </ul>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                            }
                                         </div>
                                         <div class="product-content">
                                             <ul class="product-rating">
@@ -197,7 +208,10 @@
                                             </ul>
                                             <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
                                             <div class="product-price">
-                                                <span class="regular-price ">$@item.DiscountPrice</span>
+                                                @if (item.DiscountPrice != null)
+                                                {
+                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                }
                                                 <span class="price-sale">$@item.Price</span>
                                             </div>
                                         </div>
@@ -240,6 +254,10 @@
                                                 <li><a href="#"><i class="icon ion-android-options"></i></a></li>
                                                 <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
                                             </ul>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                            }
                                         </div>
                                         <div class="product-content">
                                             <ul class="product-rating">
@@ -251,7 +269,10 @@
                                             </ul>
                                             <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
                                             <div class="product-price">
-                                                <span class="regular-price ">$@item.DiscountPrice</span>
+                                                @if (item.DiscountPrice != null)
+                                                {
+                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                }
                                                 <span class="price-sale">$@item.Price</span>
                                             </div>
                                         </div>
@@ -345,7 +366,7 @@
                         </div>
                     </div> <!-- row -->
                 </div> <!-- special products wrapper -->
-                <div class="special-products-wrapper">
+                <!--<div class="special-products-wrapper">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="special-products-gallery d-flex mt-50">
@@ -357,8 +378,8 @@
                                         <li><img src="~/assets/images/special-products/special-products-7.jpg" alt="Products Thumb"></li>
                                         <li><img src="~/assets/images/special-products/special-products-4.jpg" alt="Products Thumb"></li>
                                     </ul>
-                                </div> <!-- products gallery thumb -->
-                                <div class="products-gallery-image">
+                                </div>--> <!-- products gallery thumb -->
+                                <!--<div class="products-gallery-image">
                                     <div class="single-products-image">
                                         <a href="#">
                                             <img src="~/assets/images/special-products/special-products-5.jpg" alt="products">
@@ -384,9 +405,9 @@
                                             <img src="~/assets/images/special-products/special-products-4.jpg" alt="products">
                                         </a>
                                     </div>
-                                </div> <!-- products gallery image -->
-                            </div> <!-- special products gallery -->
-                        </div>
+                                </div>--> <!-- products gallery image -->
+                            <!--</div>--> <!-- special products gallery -->
+                        <!--</div>
                         <div class="col-lg-6">
                             <div class="special-products-countdown mt-50">
                                 <div class="products-countdown-wrapper">
@@ -413,11 +434,11 @@
                                             <a class="main-btn main-btn-2" href="#">Add to cart</a>
                                         </div>
                                     </div>
-                                </div> <!-- special products countdown -->
-                            </div> <!-- special products countdown -->
-                        </div>
-                    </div> <!-- row -->
-                </div> <!-- special products wrapper -->
+                                </div>--> <!-- special products countdown -->
+                            <!--</div>--> <!-- special products countdown -->
+                        <!--</div>
+                    </div>--> <!-- row -->
+                <!--</div>--> <!-- special products wrapper -->
             </div> <!-- special products active -->
         </div> <!-- container -->
     </section>
@@ -449,58 +470,40 @@
                 <div class="tab-pane fade show active" id="computer" role="tabpanel" aria-labelledby="computer-tab">
                     <div class="product-items">
                         <div class="row product-active-2">
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
+                            @foreach (var item in Model.Computer)
+                            {
+                            <div class="col-lg-2">
+                                <div class="single-product mt-30">
                                     <div class="product-image">
                                         <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                        <span class="discount-product">-12%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="regular-price">€29.90</span>
-                                            <span class="price-sale">€26.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                            @foreach (var image in item.ProductImages)
+                                            {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-12.jpg" alt="product">
+                                                @if (image.IsMain)
+                                                {
+
+                                                    <img class="first-image" src="~/assets/images/product/@image.ImageURL" alt="product">
+
+                                                }
+
+                                                @if (image.IsSecond)
+                                                {
+
+                                                    <img class="second-image" src="~/assets/images/product/@image.ImageURL" alt="product">
+
+                                                }
+                                            }
                                         </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
+                                        <ul class="product-meta">
+                                            <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                            <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
+                                            <li><a href="#"><i class="icon ion-android-options"></i></a></li>
+                                            <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-1.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
+                                        @if (item.DiscountPrice != null)
+                                        {
+                                            <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                        }
                                     </div>
                                     <div class="product-content">
                                         <ul class="product-rating">
@@ -510,623 +513,140 @@
                                             <li><i class="fas fa-star"></i></li>
                                             <li><i class="fas fa-star"></i></li>
                                         </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
+                                        <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
                                         <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-5.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="regular-price ">$@item.DiscountPrice</span>
+                                            }
+                                            <span class="price-sale">$@item.Price</span>
                                         </div>
                                     </div>
                                 </div> <!-- single product -->
                             </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-7.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-16.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-4.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-11.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-14.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-15.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€18.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
+                            }
                         </div> <!-- row -->
                     </div> <!-- product items -->
                 </div>
                 <div class="tab-pane fade" id="smartphone" role="tabpanel" aria-labelledby="smartphone-tab">
                     <div class="product-items">
                         <div class="row product-active-2">
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                        <span class="discount-product">-12%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="regular-price">€29.90</span>
-                                            <span class="price-sale">€26.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                            @foreach (var item in Model.Smartphone)
+                            {
+                                <div class="col-lg-4">
+                                    <div class="single-product mt-30">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                @foreach (var image in item.ProductImages)
+                                                {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-12.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-1.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    @if (image.IsMain)
+                                                    {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-5.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-7.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                        <img class="first-image" src="~/assets/images/product/@image.ImageURL" alt="product">
 
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-16.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    }
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-4.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-11.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    @if (image.IsSecond)
+                                                    {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-14.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-15.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€18.90</span>
+                                                        <img class="second-image" src="~/assets/images/product/@image.ImageURL" alt="product">
+
+                                                    }
+                                                }
+                                            </a>
+                                            <ul class="product-meta">
+                                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                                <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
+                                                <li><a href="#"><i class="icon ion-android-options"></i></a></li>
+                                                <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
+                                            </ul>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                            }
                                         </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
+                                        <div class="product-content">
+                                            <ul class="product-rating">
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                            </ul>
+                                            <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                            <div class="product-price">
+                                                @if (item.DiscountPrice != null)
+                                                {
+                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                }
+                                                <span class="price-sale">$@item.Price</span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- single product -->
+                                </div>
+                            }
                         </div> <!-- row -->
                     </div> <!-- product items -->
                 </div>
                 <div class="tab-pane fade" id="game" role="tabpanel" aria-labelledby="game-tab">
                     <div class="product-items">
                         <div class="row product-active-2">
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                        <span class="discount-product">-12%</span>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="regular-price">€29.90</span>
-                                            <span class="price-sale">€26.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                            @foreach (var item in Model.GameConsoles)
+                            {
+                                <div class="col-lg-4">
+                                    <div class="single-product mt-30">
+                                        <div class="product-image">
+                                            <a href="single-product.html">
+                                                @foreach (var image in item.ProductImages)
+                                                {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-12.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-1.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                            <li><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    @if (image.IsMain)
+                                                    {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-5.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-7.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€11.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                        <img class="first-image" src="~/assets/images/product/@image.ImageURL" alt="product">
 
-                                <div class="single-product product-list d-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-2.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-16.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-6.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    }
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-4.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-9.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€29.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-11.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">New Balance Arishi Sport v1Couture Juicy eu</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€9.90</span>
-                                        </div>
-                                    </div>
-                                </div> <!-- single product -->
+                                                    @if (image.IsSecond)
+                                                    {
 
-                                <div class="single-product product-list d-sm-flex flex-wrap align-items-center mt-30">
-                                    <div class="product-image">
-                                        <a href="single-product.html">
-                                            <img class="first-image" src="~/assets/images/product/product-14.jpg" alt="product">
-                                            <img class="second-image" src="~/assets/images/product/product-15.jpg" alt="product">
-                                        </a>
-                                    </div>
-                                    <div class="product-content">
-                                        <ul class="product-rating">
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                            <li class="rating-on"><i class="fas fa-star"></i></li>
-                                        </ul>
-                                        <h4 class="product-title"><a href="single-product.html">Cale 6 eu accumsan massa facilisis Madden by Steve</a></h4>
-                                        <div class="product-price">
-                                            <span class="price-sale">€18.90</span>
+                                                        <img class="second-image" src="~/assets/images/product/@image.ImageURL" alt="product">
+
+                                                    }
+                                                }
+                                            </a>
+                                            <ul class="product-meta">
+                                                <li><a href="#"><i class="icon ion-bag"></i></a></li>
+                                                <li><a href="#"><i class="icon ion-android-favorite-outline"></i></a></li>
+                                                <li><a href="#"><i class="icon ion-android-options"></i></a></li>
+                                                <li><a data-toggle="modal" data-target="#productQuickModal" href="#"><i class="icon ion-android-open"></i></a></li>
+                                            </ul>
+                                            @if (item.DiscountPrice != null)
+                                            {
+                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                            }
                                         </div>
-                                    </div>
-                                </div> <!-- single product -->
-                            </div>
+                                        <div class="product-content">
+                                            <ul class="product-rating">
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                                <li><i class="fas fa-star"></i></li>
+                                            </ul>
+                                            <h4 class="product-title"><a href="single-product.html">@item.Name</a></h4>
+                                            <div class="product-price">
+                                                @if (item.DiscountPrice != null)
+                                                {
+                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                }
+                                                <span class="price-sale">$@item.Price</span>
+                                            </div>
+                                        </div>
+                                    </div> <!-- single product -->
+                                </div>
+                            }
                         </div> <!-- row -->
                     </div> <!-- product items -->
                 </div>
@@ -1141,55 +661,16 @@
     <div class="brand-area pt-80">
         <div class="container-fluid custom-container">
             <div class="row brand-active">
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-1.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-2.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-3.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-4.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-5.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-6.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
-                <div class="col-lg-2">
-                    <div class="single-brand">
-                        <a href="#">
-                            <img src="~/assets/images/brand/brand-4.jpg" alt="brand">
-                        </a>
-                    </div> <!-- single brand -->
-                </div>
+                @foreach (var item in Model.Brands)
+                {
+                    <div class="col-lg-2">
+                        <div class="single-brand">
+                            <a href="#">
+                                <img src="~/assets/images/brand/@item.ImageURL" alt="brand">
+                            </a>
+                        </div> <!-- single brand -->
+                    </div>
+                }
             </div> <!-- row -->
         </div> <!-- container -->
     </div>
@@ -1201,51 +682,18 @@
     <section class="features-banner-area pt-80 pb-100">
         <div class="container-fluid custom-container">
             <div class="features-banner-wrapper d-flex flex-wrap">
-                <div class="single-features-banner d-flex">
-                    <div class="banner-icon">
-                        <img src="~/assets/images/banner-icon/icon1.png" alt="Icon">
-                    </div>
-                    <div class="banner-content media-body">
-                        <h3 class="banner-title">Free Shipping</h3>
-                        <p>Free shipping on all US order</p>
-                    </div>
-                </div> <!-- single features banner -->
-                <div class="single-features-banner d-flex">
-                    <div class="banner-icon">
-                        <img src="~/assets/images/banner-icon/icon2.png" alt="Icon">
-                    </div>
-                    <div class="banner-content media-body">
-                        <h3 class="banner-title">Support 24/7</h3>
-                        <p>Contact us 24 hours a day</p>
-                    </div>
-                </div> <!-- single features banner -->
-                <div class="single-features-banner d-flex">
-                    <div class="banner-icon">
-                        <img src="~/assets/images/banner-icon/icon3.png" alt="Icon">
-                    </div>
-                    <div class="banner-content media-body">
-                        <h3 class="banner-title">100% Money Back</h3>
-                        <p>You have 30 days to Return</p>
-                    </div>
-                </div> <!-- single features banner -->
-                <div class="single-features-banner d-flex">
-                    <div class="banner-icon">
-                        <img src="~/assets/images/banner-icon/icon4.png" alt="Icon">
-                    </div>
-                    <div class="banner-content media-body">
-                        <h3 class="banner-title">90 Days Return</h3>
-                        <p>If goods have problems</p>
-                    </div>
-                </div> <!-- single features banner -->
-                <div class="single-features-banner d-flex">
-                    <div class="banner-icon">
-                        <img src="~/assets/images/banner-icon/icon5.png" alt="Icon">
-                    </div>
-                    <div class="banner-content media-body">
-                        <h3 class="banner-title">Payment Secure</h3>
-                        <p>We ensure secure payment</p>
-                    </div>
-                </div> <!-- single features banner -->
+                @foreach (var item in Model.Features)
+                {
+                    <div class="single-features-banner d-flex">
+                        <div class="banner-icon">
+                            <img src="~/assets/images/banner-icon/@item.ImageURL" alt="Icon">
+                        </div>
+                        <div class="banner-content media-body">
+                            <h3 class="banner-title">@item.Title</h3>
+                            <p>@item.Description</p>
+                        </div>
+                    </div> <!-- single features banner -->
+                }
             </div> <!-- features banner wrapper -->
         </div> <!-- container -->
     </section>
@@ -1257,66 +705,24 @@
     <section class="blog-area blog-bg pt-100 pb-100">
         <div class="container">
             <div class="row blog-active">
-                <div class="col-lg-4">
-                    <div class="single-blog">
-                        <div class="blag-image">
-                            <a href="blog-single-left-sidebar.html"><img src="~/assets/images/blog-1.jpg" alt="Blog"></a>
-                            <p class="meta-date">
-                                <span class="day">05</span>
-                                <span class="month">Dec</span>
-                            </p>
-                        </div>
-                        <div class="blag-content">
-                            <h2 class="blog-title"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h2>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum ...</p>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-blog">
-                        <div class="blag-image">
-                            <a href="blog-single-left-sidebar.html"><img src="~/assets/images/blog-2.jpg" alt="Blog"></a>
-                            <p class="meta-date">
-                                <span class="day">05</span>
-                                <span class="month">Dec</span>
-                            </p>
-                        </div>
-                        <div class="blag-content">
-                            <h2 class="blog-title"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h2>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum ...</p>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-blog">
-                        <div class="blag-image">
-                            <a href="blog-single-left-sidebar.html"><img src="~/assets/images/blog-3.jpg" alt="Blog"></a>
-                            <p class="meta-date">
-                                <span class="day">05</span>
-                                <span class="month">Dec</span>
-                            </p>
-                        </div>
-                        <div class="blag-content">
-                            <h2 class="blog-title"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h2>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum ...</p>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
-                <div class="col-lg-4">
-                    <div class="single-blog">
-                        <div class="blag-image">
-                            <a href="blog-single-left-sidebar.html"><img src="~/assets/images/blog-4.jpg" alt="Blog"></a>
-                            <p class="meta-date">
-                                <span class="day">05</span>
-                                <span class="month">Dec</span>
-                            </p>
-                        </div>
-                        <div class="blag-content">
-                            <h2 class="blog-title"><a href="blog-single-left-sidebar.html">This is Third Post For XipBlog</a></h2>
-                            <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum ...</p>
-                        </div>
-                    </div> <!-- single blog -->
-                </div>
+                @foreach (var item in Model.Blogs)
+                {
+                    <div class="col-lg-4">
+                        <div class="single-blog">
+                            <div class="blag-image">
+                                <a href="blog-single-left-sidebar.html"><img src="~/assets/images/@item.ImageURL" alt="Blog"></a>
+                                <p class="meta-date">
+                                    <span class="day">@item.CreatedAt.ToString("dd")</span>
+                                    <span class="month">@item.CreatedAt.ToString("MMMM")</span>
+                                </p>
+                            </div>
+                            <div class="blag-content">
+                                <h2 class="blog-title"><a href="blog-single-left-sidebar.html">@item.Title</a></h2>
+                                <p>@item.Description</p>
+                            </div>
+                        </div> <!-- single blog -->
+                    </div>
+                }
             </div> <!-- row -->
         </div> <!-- container -->
     </section>

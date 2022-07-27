@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Allup.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220726172520_initialProject")]
-    partial class initialProject
+    [Migration("20220727171938_Features")]
+    partial class Features
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -114,7 +114,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(6955),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 893, DateTimeKind.Local).AddTicks(9503),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-1.jpg",
                             Title = "This is First Post For XipBlog"
@@ -122,7 +122,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(7684),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 894, DateTimeKind.Local).AddTicks(241),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-2.jpg",
                             Title = "This is Second Post For XipBlog"
@@ -130,7 +130,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 937, DateTimeKind.Local).AddTicks(7707),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 894, DateTimeKind.Local).AddTicks(266),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-3.jpg",
                             Title = "This is Third Post For XipBlog"
@@ -341,6 +341,64 @@ namespace Allup.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Allup.Models.Features", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageURL")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Features");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Free shipping on all US order",
+                            ImageURL = "icon1.png",
+                            Title = "Free Shipping"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Contact us 24 hours a day",
+                            ImageURL = "icon2.png",
+                            Title = "Support 24/7"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "You have 30 days to Return",
+                            ImageURL = "icon3.png",
+                            Title = "100% Money Back"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "If goods have problems",
+                            ImageURL = "icon4.png",
+                            Title = "90 Days Return"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "We ensure secure payment",
+                            ImageURL = "icon5.png",
+                            Title = "Payment Secure"
+                        });
+                });
+
             modelBuilder.Entity("Allup.Models.Order", b =>
                 {
                     b.Property<int>("Id")
@@ -432,13 +490,22 @@ namespace Allup.Migrations
                     b.Property<bool>("IsBestseller")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsComputer")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsGameConsoles")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsNewArrival")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsSmartphone")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
@@ -464,11 +531,14 @@ namespace Allup.Migrations
                             Id = 1,
                             BrandId = 3,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 935, DateTimeKind.Local).AddTicks(9848),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(2664),
                             IsBestseller = true,
+                            IsComputer = true,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = false,
                             Name = "Cale 6 eu accumsan massa facilisis Madden by Steve",
                             Price = 11.9
                         },
@@ -477,12 +547,15 @@ namespace Allup.Migrations
                             Id = 2,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6290),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(8936),
                             DiscountPrice = 21.899999999999999,
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = true,
                             IsNewArrival = false,
+                            IsSmartphone = false,
                             Name = "Originals Kaval Wind breaker Winter Jacket eu...",
                             Price = 23.899999999999999
                         },
@@ -491,11 +564,14 @@ namespace Allup.Migrations
                             Id = 3,
                             BrandId = 6,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6314),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9165),
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = false,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = true,
                             Name = "Madden by Steve Madden Cale 6 eu accumsan massa...",
                             Price = 11.9
                         },
@@ -504,11 +580,14 @@ namespace Allup.Migrations
                             Id = 4,
                             BrandId = 1,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6316),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9346),
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = false,
+                            IsSmartphone = true,
                             Name = "Water and Wind Resistant Insulated Jacket eu massa",
                             Price = 11.9
                         },
@@ -517,11 +596,14 @@ namespace Allup.Migrations
                             Id = 5,
                             BrandId = 4,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6318),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9359),
                             IsBestseller = true,
+                            IsComputer = true,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = false,
                             Name = "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..",
                             Price = 18.899999999999999
                         },
@@ -530,11 +612,14 @@ namespace Allup.Migrations
                             Id = 6,
                             BrandId = 1,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6319),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9365),
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = false,
+                            IsGameConsoles = true,
                             IsNewArrival = true,
+                            IsSmartphone = false,
                             Name = "Cale 6 eu accumsan massa facilisis Madden by Steve",
                             Price = 29.899999999999999
                         },
@@ -543,11 +628,14 @@ namespace Allup.Migrations
                             Id = 7,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6320),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9376),
                             IsBestseller = false,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = true,
                             Name = "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker",
                             Price = 23.899999999999999
                         },
@@ -556,11 +644,14 @@ namespace Allup.Migrations
                             Id = 8,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6322),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9378),
                             IsBestseller = false,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = true,
                             IsNewArrival = true,
+                            IsSmartphone = false,
                             Name = "Juicy Couture Juicy Quilted Terry Track Jacket eu...",
                             Price = 35.899999999999999
                         },
@@ -569,11 +660,14 @@ namespace Allup.Migrations
                             Id = 9,
                             BrandId = 3,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6324),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9379),
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = false,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = true,
                             Name = "Trans-Weight Hooded Wind and Water Resistant Shell",
                             Price = 11.9
                         },
@@ -582,11 +676,14 @@ namespace Allup.Migrations
                             Id = 10,
                             BrandId = 5,
                             CategoryId = 14,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6325),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9380),
                             IsBestseller = false,
+                            IsComputer = true,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = false,
+                            IsSmartphone = false,
                             Name = "New Balance Fresh Foam Kaymin eu accumsan massa...",
                             Price = 11.9
                         },
@@ -595,11 +692,14 @@ namespace Allup.Migrations
                             Id = 11,
                             BrandId = 5,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6327),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9382),
                             IsBestseller = false,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = true,
+                            IsGameConsoles = false,
                             IsNewArrival = true,
+                            IsSmartphone = true,
                             Name = "New Balance Fresh Foam LAZR v1 Sport eu accumsan...",
                             Price = 18.899999999999999
                         },
@@ -608,12 +708,15 @@ namespace Allup.Migrations
                             Id = 12,
                             BrandId = 6,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 7, 26, 21, 25, 19, 936, DateTimeKind.Local).AddTicks(6333),
+                            CreatedAt = new DateTime(2022, 7, 27, 21, 19, 37, 892, DateTimeKind.Local).AddTicks(9388),
                             DiscountPrice = 26.100000000000001,
                             IsBestseller = true,
+                            IsComputer = false,
                             IsDeleted = false,
                             IsFeatured = false,
+                            IsGameConsoles = true,
                             IsNewArrival = true,
+                            IsSmartphone = false,
                             Name = "New Balance Arishi Sport v1Couture Juicy eu",
                             Price = 29.0
                         });

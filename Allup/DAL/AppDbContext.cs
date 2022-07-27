@@ -23,6 +23,7 @@ namespace Allup.DAL
         public DbSet<Quotes> Quotes { get; set; }
         public DbSet<Slider> Sliders { get; set; }
         public DbSet<Banner> Banners { get; set; }
+        public DbSet<Features> Features { get; set; }
 
 
 
@@ -30,18 +31,18 @@ namespace Allup.DAL
         {
             modelBuilder.Entity<Product>().HasData(
 
-                new Product { Id = 1, Name = "Cale 6 eu accumsan massa facilisis Madden by Steve", Price = 11.90, CategoryId = 12, BrandId = 3, IsNewArrival = true, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 2, Name = "Originals Kaval Wind breaker Winter Jacket eu...", Price = 23.90, DiscountPrice = 21.90, CategoryId = 4, BrandId = 2, IsNewArrival = false, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 3, Name = "Madden by Steve Madden Cale 6 eu accumsan massa...", Price = 11.90, CategoryId = 5, BrandId = 6, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 4, Name = "Water and Wind Resistant Insulated Jacket eu massa", Price = 11.90, CategoryId = 5, BrandId = 1, IsNewArrival = false, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 5, Name = "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..", Price = 18.90, CategoryId = 7, BrandId = 4, IsNewArrival = true, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 6, Name = "Cale 6 eu accumsan massa facilisis Madden by Steve", Price = 29.90, CategoryId = 4, BrandId = 1, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 7, Name = "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker", Price = 23.90, CategoryId = 10, BrandId = 4, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 8, Name = "Juicy Couture Juicy Quilted Terry Track Jacket eu...", Price = 35.90, CategoryId = 4, BrandId = 2, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 9, Name = "Trans-Weight Hooded Wind and Water Resistant Shell", Price = 11.90, CategoryId = 5, BrandId = 3, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 10, Name = "New Balance Fresh Foam Kaymin eu accumsan massa...", Price = 11.90, CategoryId = 14, BrandId = 5, IsNewArrival = false, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 11, Name = "New Balance Fresh Foam LAZR v1 Sport eu accumsan...", Price = 18.90, CategoryId = 12, BrandId = 5, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsDeleted = false },
-                new Product { Id = 12, Name = "New Balance Arishi Sport v1Couture Juicy eu", Price = 29.00, DiscountPrice = 26.10, CategoryId = 12, BrandId = 6, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsDeleted = false }
+                new Product { Id = 1, Name = "Cale 6 eu accumsan massa facilisis Madden by Steve", Price = 11.90, CategoryId = 12, BrandId = 3, IsNewArrival = true, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsComputer = true },
+                new Product { Id = 2, Name = "Originals Kaval Wind breaker Winter Jacket eu...", Price = 23.90, DiscountPrice = 21.90, CategoryId = 4, BrandId = 2, IsNewArrival = false, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsGameConsoles = true },
+                new Product { Id = 3, Name = "Madden by Steve Madden Cale 6 eu accumsan massa...", Price = 11.90, CategoryId = 5, BrandId = 6, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsSmartphone = true },
+                new Product { Id = 4, Name = "Water and Wind Resistant Insulated Jacket eu massa", Price = 11.90, CategoryId = 5, BrandId = 1, IsNewArrival = false, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsSmartphone = true },
+                new Product { Id = 5, Name = "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..", Price = 18.90, CategoryId = 7, BrandId = 4, IsNewArrival = true, IsBestseller = true, IsFeatured = true, CreatedAt = DateTime.Now, IsComputer = true },
+                new Product { Id = 6, Name = "Cale 6 eu accumsan massa facilisis Madden by Steve", Price = 29.90, CategoryId = 4, BrandId = 1, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsGameConsoles = true },
+                new Product { Id = 7, Name = "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker", Price = 23.90, CategoryId = 10, BrandId = 4, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsSmartphone = true },
+                new Product { Id = 8, Name = "Juicy Couture Juicy Quilted Terry Track Jacket eu...", Price = 35.90, CategoryId = 4, BrandId = 2, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsGameConsoles = true },
+                new Product { Id = 9, Name = "Trans-Weight Hooded Wind and Water Resistant Shell", Price = 11.90, CategoryId = 5, BrandId = 3, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsSmartphone = true },
+                new Product { Id = 10, Name = "New Balance Fresh Foam Kaymin eu accumsan massa...", Price = 11.90, CategoryId = 14, BrandId = 5, IsNewArrival = false, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsComputer = true },
+                new Product { Id = 11, Name = "New Balance Fresh Foam LAZR v1 Sport eu accumsan...", Price = 18.90, CategoryId = 12, BrandId = 5, IsNewArrival = true, IsBestseller = false, IsFeatured = true, CreatedAt = DateTime.Now, IsSmartphone = true },
+                new Product { Id = 12, Name = "New Balance Arishi Sport v1Couture Juicy eu", Price = 29.00, DiscountPrice = 26.10, CategoryId = 12, BrandId = 6, IsNewArrival = true, IsBestseller = true, IsFeatured = false, CreatedAt = DateTime.Now, IsGameConsoles = true }
 
 
             );
@@ -121,6 +122,15 @@ namespace Allup.DAL
 
                 new Banner { Id = 1, Name = "Redmi 6 Pro", ImageURL = "banner-1.png"},
                 new Banner { Id = 2, Name = "Headphone", ImageURL = "banner-2.png" }
+            );
+
+            modelBuilder.Entity<Features>().HasData(
+
+                new Features { Id = 1, ImageURL = "icon1.png", Title = "Free Shipping", Description = "Free shipping on all US order" },
+                new Features { Id = 2, ImageURL = "icon2.png", Title = "Support 24/7", Description = "Contact us 24 hours a day" },
+                new Features { Id = 3, ImageURL = "icon3.png", Title = "100% Money Back", Description = "You have 30 days to Return" },
+                new Features { Id = 4, ImageURL = "icon4.png", Title = "90 Days Return", Description = "If goods have problems" },
+                new Features { Id = 5, ImageURL = "icon5.png", Title = "Payment Secure", Description = "We ensure secure payment" }
             );
         }
     }

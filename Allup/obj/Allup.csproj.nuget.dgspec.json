@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aliit\\source\\repos\\BackendProject\\Allup\\Allup.csproj": {}
+    "C:\\Users\\aliit\\Desktop\\BackendProject\\Allup\\Allup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aliit\\source\\repos\\BackendProject\\Allup\\Allup.csproj": {
+    "C:\\Users\\aliit\\Desktop\\BackendProject\\Allup\\Allup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aliit\\source\\repos\\BackendProject\\Allup\\Allup.csproj",
+        "projectUniqueName": "C:\\Users\\aliit\\Desktop\\BackendProject\\Allup\\Allup.csproj",
         "projectName": "Allup",
-        "projectPath": "C:\\Users\\aliit\\source\\repos\\BackendProject\\Allup\\Allup.csproj",
+        "projectPath": "C:\\Users\\aliit\\Desktop\\BackendProject\\Allup\\Allup.csproj",
         "packagesPath": "C:\\Users\\aliit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aliit\\source\\repos\\BackendProject\\Allup\\obj\\",
+        "outputPath": "C:\\Users\\aliit\\Desktop\\BackendProject\\Allup\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aliit\\AppData\\Roaming\\NuGet\\NuGet.Config",

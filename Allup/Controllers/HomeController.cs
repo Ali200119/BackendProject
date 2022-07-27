@@ -78,6 +78,27 @@ namespace Allup.Controllers
                 .Where(p => p.IsFeatured)
                 .ToList();
 
+            homeVM.Computer = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Include(p => p.ProductImages)
+                .Where(p => p.IsComputer)
+                .ToList();
+
+            homeVM.Smartphone = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p => p.IsSmartphone)
+                .ToList();
+
+            homeVM.GameConsoles = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .Where(p => p.IsGameConsoles)
+                .ToList();
+
+            homeVM.Features = _context.Features.ToList();
+
             return View(homeVM);
         }
     }
