@@ -5,7 +5,7 @@ using System;
 
 namespace Allup.DAL
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -79,14 +79,15 @@ namespace Allup.DAL
 
                 new Blog { Id = 1, CreatedAt =  DateTime.Now, ImageURL = "blog-1.jpg", Title = "This is First Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
                 new Blog { Id = 2, CreatedAt = DateTime.Now, ImageURL = "blog-2.jpg", Title = "This is Second Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
-                new Blog { Id = 3, CreatedAt = DateTime.Now, ImageURL = "blog-3.jpg", Title = "This is Third Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." }
+                new Blog { Id = 3, CreatedAt = DateTime.Now, ImageURL = "blog-3.jpg", Title = "This is Third Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
+                 new Blog { Id = 4, CreatedAt = DateTime.Now, ImageURL = "blog-4.jpg", Title = "This is Fourth Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." }
             );
 
             modelBuilder.Entity<Quotes>().HasData(
                 
                 new Quotes { Id= 1, ImageURL = "author-1.png", Quote = " An has feugiat vivendum, ad vix tacimates accusamus, cum commune lucilius no. Sit at alia civibus indoctum, ea mel regione percipit adipisci. Per modus nostrum vituperata no, eam ne magna solum constituam.", Name = "John Doe", Email = "email@yourwebsitename.com" },
                 new Quotes { Id = 2, ImageURL = "author-2.jpg", Quote = "Some people don't like change, but you need to embrace change if the alternative is disaster.", Name = "Elon Musk", Email = "ElonMusk@gmail.com" },
-                new Quotes { Id = 3, ImageURL = "author-3.png", Quote = "Play Has No Limits.", Name = "Sony Pla", Email = "info@sony.com" }
+                new Quotes { Id = 3, ImageURL = "author-3.png", Quote = "Play Has No Limits.", Name = "Sony PlayStation", Email = "info@sony.com" }
             );
 
             modelBuilder.Entity<Slider>().HasData(

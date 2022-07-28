@@ -1,7 +1,9 @@
 using Allup.DAL;
+using Allup.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +32,19 @@ namespace Allup
             {
                 option.UseSqlServer(_config.GetConnectionString("DefaultConnection"));
             });
+            services.AddIdentity<User, IdentityRole>(option =>
+            {
+
+                option.Password.RequiredLength = 7;
+                option.Password.RequireNonAlphanumeric = true;
+                option.Password.RequireDigit = true;
+
+                option.User.RequireUniqueEmail = true;
+
+                option.Lockout.MaxFailedAccessAttempts = 5;
+                option.Lockout.AllowedForNewUsers = true;
+                option.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromHours(1);
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace Allup.Models
 {
-    public class User
+    public class User: IdentityUser
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public string FullName { get; set; }
         public List<Order> Orders { get; set; }
         public List<BasketItem> BasketItems { get; set; }
     }
