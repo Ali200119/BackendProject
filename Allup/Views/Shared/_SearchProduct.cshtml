@@ -1,0 +1,13 @@
+﻿@model List<Product>
+
+
+    <ul class="sub-menu flex-wrap">
+          <li>
+               <ul class="submenu-item ">
+                    @foreach (var item in Model)
+                   {
+                       <li><a asp-controller="product" asp-action="details" asp-route-id="@item.Id">@item.Name</a></li>
+                   }
+               </ul>
+          </li>
+    </ul> <!-- sub menu -->

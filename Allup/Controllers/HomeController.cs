@@ -1,4 +1,5 @@
 ﻿using Allup.DAL;
+using Allup.Models;
 using Allup.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -100,6 +101,19 @@ namespace Allup.Controllers
             homeVM.Features = _context.Features.ToList();
 
             return View(homeVM);
+        }
+
+        public IActionResult SearchProduct (string search)
+        {
+            List<Product> products = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
+                .OrderBy(p => p.Id)
+                .Where(p=>p.Name.ToLower()
+                .Contains(search.ToLower()))
+                .ToList();
+
+            return PartialView("_SearchPartial", products);
         }
     }
 }
