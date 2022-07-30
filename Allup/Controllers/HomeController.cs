@@ -41,15 +41,6 @@ namespace Allup.Controllers
 
             homeVM.Brands = _context.Brands.ToList();
 
-            homeVM.Orders = _context.Orders
-                .Include(o=>o.User)
-                .ToList();
-
-            homeVM.OrderItems = _context.OrderItems
-                .Include(oi => oi.Order)
-                .Include(oi => oi.Product)
-                .ToList();
-
             homeVM.ProductImages = _context.ProductImages
                 .Include(pi => pi.Product)
                 .ToList();
@@ -100,20 +91,9 @@ namespace Allup.Controllers
 
             homeVM.Features = _context.Features.ToList();
 
+            homeVM.Users = _context.Users.ToList();
+
             return View(homeVM);
-        }
-
-        public IActionResult SearchProduct (string search)
-        {
-            List<Product> products = _context.Products
-                .Include(p => p.Category)
-                .Include(p => p.Brand)
-                .OrderBy(p => p.Id)
-                .Where(p=>p.Name.ToLower()
-                .Contains(search.ToLower()))
-                .ToList();
-
-            return PartialView("_SearchPartial", products);
         }
     }
 }

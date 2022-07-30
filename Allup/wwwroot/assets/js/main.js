@@ -844,19 +844,4 @@ $(function() {
         }
     });
     $( "#amount" ).val( "€" + $( "#slider-range" ).slider( "values", 0 ) + " - €" + $( "#slider-range" ).slider( "values", 1 ) );
-    
-
-    //===== Search
-
-    $(document).on("keyup", "#search", function () {
-        let inputValue = $(this).val();
-
-        $.ajax({
-            url: "home/searchProduct?search=" + inputValue,
-            method: "get",
-            success: function (response) {
-                $("#searchList").append(response);
-            }
-        })
-    })
 });

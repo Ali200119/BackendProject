@@ -10,8 +10,6 @@ namespace Allup.ViewModels
         public List<Blog> Blogs { get; set; }
         public List<Brand> Brands { get; set; }
         public List<BasketItem> BasketItems { get; set; }
-        public List<Order> Orders { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
         public List<ProductImage> ProductImages { get; set; }
         public List<Quotes> Quotes { get; set; }
         public List<Slider> Sliders { get; set; }
@@ -23,5 +21,6 @@ namespace Allup.ViewModels
         public List<Product> Smartphone { get; set; }
         public List<Product> GameConsoles { get; set; }
         public List<Features> Features { get; set; }
+        public List<User> Users { get; set; }
     }
 }

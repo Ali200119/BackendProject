@@ -26,5 +26,7 @@ namespace Allup.Models
         public Nullable<DateTime> DeletedAt { get; set; }
         public bool IsDeleted { get; set; }
         public List<BasketItem> BasketItems { get; set; }
+        public int StockCount { get; set; }
+        public string Description { get; set; }
     }
 }

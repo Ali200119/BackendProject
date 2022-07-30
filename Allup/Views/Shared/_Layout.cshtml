@@ -236,10 +236,8 @@
                                                 <option value="112">Games &amp; Consoles</option>
                                             </select>
                                         </div>
-                                        <div id="searchList">
                                             <input id="search" type="text" placeholder="Enter your search key ... ">
                                             <button><i class="icon ion-android-search"></i></button>
-                                        </div>
                                     </form>
                                 </div>
                                 <div class="header-cart">
@@ -422,7 +420,7 @@
                                             <li><a href="wishlist.html">Wishlist</a></li>
                                             <li><a href="my-account.html">My Account</a></li>
                                             <li><a href="login.html">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
+                                            <li><a asp-controller="account" asp-action="register">Register</a></li>
                                         </ul>
                                     </li>
                                     <li class="position-static"><a href="#">Shop <i class="fal fa-chevron-down"></i></a>
@@ -811,9 +809,9 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a class="menu-title" href="#">Shop List</a>
+                                    <a class="menu-title" asp-controller="shop" asp-action="index">Shop List</a>
                                     <ul class="submenu-item">
-                                        <li><a href="shop-list.html">Shop List</a></li>
+                                        <li><a asp-controller="shop" asp-action="index">Shop List</a></li>
                                         <li><a href="shop-list-left-sidebar.html">Shop List Left sidebar</a></li>
                                         <li><a href="shop-list-right-sidebar.html">Shop List Right sidebar</a></li>
                                     </ul>
