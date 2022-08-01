@@ -109,7 +109,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 881, DateTimeKind.Local).AddTicks(1792),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 318, DateTimeKind.Local).AddTicks(4802),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-1.jpg",
                             Title = "This is First Post For XipBlog"
@@ -117,7 +117,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 881, DateTimeKind.Local).AddTicks(3869),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 318, DateTimeKind.Local).AddTicks(8835),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-2.jpg",
                             Title = "This is Second Post For XipBlog"
@@ -125,7 +125,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 881, DateTimeKind.Local).AddTicks(3938),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 318, DateTimeKind.Local).AddTicks(8951),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-3.jpg",
                             Title = "This is Third Post For XipBlog"
@@ -133,7 +133,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 881, DateTimeKind.Local).AddTicks(3952),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 318, DateTimeKind.Local).AddTicks(8971),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-4.jpg",
                             Title = "This is Fourth Post For XipBlog"
@@ -511,6 +511,9 @@ namespace Allup.Migrations
                     b.Property<bool>("IsSmartphone")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsSpecialProduct")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -537,7 +540,7 @@ namespace Allup.Migrations
                             Id = 1,
                             BrandId = 3,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 876, DateTimeKind.Local).AddTicks(9080),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 310, DateTimeKind.Local).AddTicks(5169),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
@@ -546,6 +549,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "Cale 6 eu accumsan massa facilisis Madden by Steve",
                             Price = 11.9,
                             StockCount = 189
@@ -555,7 +559,7 @@ namespace Allup.Migrations
                             Id = 2,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(6429),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(5339),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 21.899999999999999,
                             IsBestseller = true,
@@ -565,6 +569,7 @@ namespace Allup.Migrations
                             IsGameConsoles = true,
                             IsNewArrival = false,
                             IsSmartphone = false,
+                            IsSpecialProduct = true,
                             Name = "Originals Kaval Wind breaker Winter Jacket eu...",
                             Price = 23.899999999999999,
                             StockCount = 25
@@ -574,7 +579,7 @@ namespace Allup.Migrations
                             Id = 3,
                             BrandId = 6,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7115),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(8652),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -583,6 +588,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = true,
+                            IsSpecialProduct = false,
                             Name = "Madden by Steve Madden Cale 6 eu accumsan massa...",
                             Price = 11.9,
                             StockCount = 10
@@ -592,7 +598,7 @@ namespace Allup.Migrations
                             Id = 4,
                             BrandId = 1,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7642),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9658),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -601,6 +607,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = false,
                             IsSmartphone = true,
+                            IsSpecialProduct = false,
                             Name = "Water and Wind Resistant Insulated Jacket eu massa",
                             Price = 11.9,
                             StockCount = 101
@@ -610,7 +617,7 @@ namespace Allup.Migrations
                             Id = 5,
                             BrandId = 4,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7697),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9751),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
@@ -619,6 +626,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "Juicy Couture Solid Sleeve Puffer Jacket eu accumsan..",
                             Price = 18.899999999999999,
                             StockCount = 33
@@ -628,7 +636,7 @@ namespace Allup.Migrations
                             Id = 6,
                             BrandId = 1,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7731),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9794),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -637,6 +645,7 @@ namespace Allup.Migrations
                             IsGameConsoles = true,
                             IsNewArrival = true,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "Cale 6 eu accumsan massa facilisis Madden by Steve",
                             Price = 29.899999999999999,
                             StockCount = 87
@@ -646,7 +655,7 @@ namespace Allup.Migrations
                             Id = 7,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7756),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9832),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -655,6 +664,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = true,
+                            IsSpecialProduct = true,
                             Name = "Winter Jacket eu accumsan massa facili originals Kaval Wind breaker",
                             Price = 23.899999999999999,
                             StockCount = 23
@@ -664,7 +674,7 @@ namespace Allup.Migrations
                             Id = 8,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7771),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9871),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -673,6 +683,7 @@ namespace Allup.Migrations
                             IsGameConsoles = true,
                             IsNewArrival = true,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "Juicy Couture Juicy Quilted Terry Track Jacket eu...",
                             Price = 35.899999999999999,
                             StockCount = 238
@@ -682,7 +693,7 @@ namespace Allup.Migrations
                             Id = 9,
                             BrandId = 3,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7787),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9892),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -691,6 +702,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = true,
+                            IsSpecialProduct = true,
                             Name = "Trans-Weight Hooded Wind and Water Resistant Shell",
                             Price = 11.9,
                             StockCount = 235
@@ -700,7 +712,7 @@ namespace Allup.Migrations
                             Id = 10,
                             BrandId = 5,
                             CategoryId = 14,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7801),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9912),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = true,
@@ -709,6 +721,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = false,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "New Balance Fresh Foam Kaymin eu accumsan massa...",
                             Price = 11.9,
                             StockCount = 25
@@ -718,7 +731,7 @@ namespace Allup.Migrations
                             Id = 11,
                             BrandId = 5,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7816),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9931),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -727,6 +740,7 @@ namespace Allup.Migrations
                             IsGameConsoles = false,
                             IsNewArrival = true,
                             IsSmartphone = true,
+                            IsSpecialProduct = true,
                             Name = "New Balance Fresh Foam LAZR v1 Sport eu accumsan...",
                             Price = 18.899999999999999,
                             StockCount = 190
@@ -736,7 +750,7 @@ namespace Allup.Migrations
                             Id = 12,
                             BrandId = 6,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 14, 11, 3, 878, DateTimeKind.Local).AddTicks(7842),
+                            CreatedAt = new DateTime(2022, 8, 1, 15, 32, 55, 313, DateTimeKind.Local).AddTicks(9973),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 26.100000000000001,
                             IsBestseller = true,
@@ -746,6 +760,7 @@ namespace Allup.Migrations
                             IsGameConsoles = true,
                             IsNewArrival = true,
                             IsSmartphone = false,
+                            IsSpecialProduct = false,
                             Name = "New Balance Arishi Sport v1Couture Juicy eu",
                             Price = 29.0,
                             StockCount = 255
@@ -929,6 +944,102 @@ namespace Allup.Migrations
                             IsMain = true,
                             IsSecond = false,
                             ProductId = 12
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ImageURL = "product-12.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ImageURL = "product-9.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ImageURL = "product-5.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ImageURL = "product-13.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 7
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ImageURL = "product-15.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 7
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ImageURL = "product-8.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 7
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ImageURL = "product-10.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 9
+                        },
+                        new
+                        {
+                            Id = 27,
+                            ImageURL = "product-17.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 9
+                        },
+                        new
+                        {
+                            Id = 28,
+                            ImageURL = "product-7.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 9
+                        },
+                        new
+                        {
+                            Id = 29,
+                            ImageURL = "product-13.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 11
+                        },
+                        new
+                        {
+                            Id = 30,
+                            ImageURL = "product-6.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 11
+                        },
+                        new
+                        {
+                            Id = 31,
+                            ImageURL = "product-8.jpg",
+                            IsMain = false,
+                            IsSecond = false,
+                            ProductId = 11
                         });
                 });
 

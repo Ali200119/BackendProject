@@ -21,6 +21,7 @@ namespace Allup.Models
         public bool IsComputer { get; set; }
         public bool IsSmartphone { get; set; }
         public bool IsGameConsoles { get; set; }
+        public bool IsSpecialProduct { get; set; }
         public Nullable<DateTime> CreatedAt { get; set; }
         public Nullable<DateTime> UpdatedAt { get; set; }
         public Nullable<DateTime> DeletedAt { get; set; }

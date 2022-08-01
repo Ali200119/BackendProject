@@ -57,20 +57,6 @@ namespace Allup.Controllers
             return RedirectToAction("index", "home");
         }
 
-        public async Task CreateRole()
-        {
-
-            if (!await _roleManager.RoleExistsAsync("Admin"))
-            {
-                await _roleManager.CreateAsync(new IdentityRole { Name = "Admin" });
-            }
-            if (!await _roleManager.RoleExistsAsync("Member"))
-            {
-                await _roleManager.CreateAsync(new IdentityRole { Name = "Member" });
-            }
-
-        }
-
         public IActionResult Login()
         {
             return View();
@@ -106,6 +92,13 @@ namespace Allup.Controllers
 
                 return View(loginVM);
             }
+
+            return RedirectToAction("index", "home");
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
 
             return RedirectToAction("index", "home");
         }
