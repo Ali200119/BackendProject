@@ -1,14 +1,8 @@
 ﻿using Allup.DAL;
-using Allup.Models;
 using Allup.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Allup.Controllers
 {
@@ -26,8 +20,8 @@ namespace Allup.Controllers
             HomeVM homeVM = new HomeVM();
 
             homeVM.Products = _context.Products
-                .Include(p=>p.Category)
-                .Include(p=>p.Brand)
+                .Include(p => p.Category)
+                .Include(p => p.Brand)
                 .ToList();
 
             homeVM.Categories = _context.Categories.ToList();
@@ -55,7 +49,7 @@ namespace Allup.Controllers
                 .Include(p => p.Category)
                 .Include(p => p.Brand)
                 .Include(p => p.ProductImages)
-                .Where(p=>p.IsNewArrival)
+                .Where(p => p.IsNewArrival)
                 .ToList();
 
             homeVM.Bestseller = _context.Products
