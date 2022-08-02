@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Allup.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220801154618_initialProject")]
+    [Migration("20220802061007_initialProject")]
     partial class initialProject
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -111,7 +111,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 915, DateTimeKind.Local).AddTicks(9059),
+                            CreatedAt = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-1.jpg",
                             Title = "This is First Post For XipBlog"
@@ -119,7 +119,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 915, DateTimeKind.Local).AddTicks(9797),
+                            CreatedAt = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-2.jpg",
                             Title = "This is Second Post For XipBlog"
@@ -127,7 +127,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 915, DateTimeKind.Local).AddTicks(9826),
+                            CreatedAt = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-3.jpg",
                             Title = "This is Third Post For XipBlog"
@@ -135,7 +135,7 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 915, DateTimeKind.Local).AddTicks(9828),
+                            CreatedAt = new DateTime(2022, 12, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum...",
                             ImageURL = "blog-4.jpg",
                             Title = "This is Fourth Post For XipBlog"
@@ -542,7 +542,7 @@ namespace Allup.Migrations
                             Id = 1,
                             BrandId = 3,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(2099),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 23, DateTimeKind.Local).AddTicks(2823),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
@@ -561,7 +561,7 @@ namespace Allup.Migrations
                             Id = 2,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(8582),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(1094),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 21.899999999999999,
                             IsBestseller = true,
@@ -581,7 +581,7 @@ namespace Allup.Migrations
                             Id = 3,
                             BrandId = 6,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(8979),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2166),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -600,7 +600,7 @@ namespace Allup.Migrations
                             Id = 4,
                             BrandId = 1,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9151),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2682),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -619,7 +619,7 @@ namespace Allup.Migrations
                             Id = 5,
                             BrandId = 4,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9168),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2741),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
@@ -638,7 +638,7 @@ namespace Allup.Migrations
                             Id = 6,
                             BrandId = 1,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9186),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2768),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -657,7 +657,7 @@ namespace Allup.Migrations
                             Id = 7,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9192),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2796),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -676,7 +676,7 @@ namespace Allup.Migrations
                             Id = 8,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9199),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2822),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -695,7 +695,7 @@ namespace Allup.Migrations
                             Id = 9,
                             BrandId = 3,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9200),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2839),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
@@ -714,7 +714,7 @@ namespace Allup.Migrations
                             Id = 10,
                             BrandId = 5,
                             CategoryId = 14,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9202),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2853),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = true,
@@ -733,7 +733,7 @@ namespace Allup.Migrations
                             Id = 11,
                             BrandId = 5,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9203),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2868),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
@@ -752,7 +752,7 @@ namespace Allup.Migrations
                             Id = 12,
                             BrandId = 6,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 1, 19, 46, 17, 914, DateTimeKind.Local).AddTicks(9209),
+                            CreatedAt = new DateTime(2022, 8, 2, 10, 10, 7, 25, DateTimeKind.Local).AddTicks(2899),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 26.100000000000001,
                             IsBestseller = true,

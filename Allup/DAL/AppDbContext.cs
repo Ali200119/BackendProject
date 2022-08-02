@@ -79,10 +79,10 @@ namespace Allup.DAL
 
             modelBuilder.Entity<Blog>().HasData(
 
-                new Blog { Id = 1, CreatedAt =  DateTime.Now, ImageURL = "blog-1.jpg", Title = "This is First Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
-                new Blog { Id = 2, CreatedAt = DateTime.Now, ImageURL = "blog-2.jpg", Title = "This is Second Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
-                new Blog { Id = 3, CreatedAt = DateTime.Now, ImageURL = "blog-3.jpg", Title = "This is Third Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
-                new Blog { Id = 4, CreatedAt = DateTime.Now, ImageURL = "blog-4.jpg", Title = "This is Fourth Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." }
+                new Blog { Id = 1, CreatedAt = new DateTime(2022, 12, 5), ImageURL = "blog-1.jpg", Title = "This is First Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
+                new Blog { Id = 2, CreatedAt = new DateTime(2022, 12, 5), ImageURL = "blog-2.jpg", Title = "This is Second Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
+                new Blog { Id = 3, CreatedAt = new DateTime(2022, 12, 5), ImageURL = "blog-3.jpg", Title = "This is Third Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." },
+                new Blog { Id = 4, CreatedAt = new DateTime(2022, 12, 5), ImageURL = "blog-4.jpg", Title = "This is Fourth Post For XipBlog", Description = "Simply dummy text of the printing and typesetting industry.Lorem Ipsum..." }
             );
 
             modelBuilder.Entity<Quotes>().HasData(
