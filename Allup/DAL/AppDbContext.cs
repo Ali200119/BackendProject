@@ -51,20 +51,20 @@ namespace Allup.DAL
 
             modelBuilder.Entity<Category>().HasData(
 
-                new Category { Id = 1, Name = "Laptop", ImageURL = "category-1.jpg", IsDeleted = false },
-                new Category { Id = 2, Name = "Computer", ImageURL = "category-2.jpg", IsDeleted = false },
-                new Category { Id = 3, Name = "Smartphone", ImageURL = "category-3.jpg", IsDeleted = false },
-                new Category { Id = 4, Name = "Game Consoles", ImageURL = "category-4.jpg", IsDeleted = false },
-                new Category { Id = 5, Name = "Headphones", ImageURL = "category-5.jpg", IsDeleted = false },
-                new Category { Id = 6, Name = "Monitor", ImageURL = "category-6.jpg", IsDeleted = false },
-                new Category { Id = 7, Name = "Audio & Video", ImageURL = "category-7.jpg", IsDeleted = false },
-                new Category { Id = 8, Name = "Accessories", ImageURL = "category-8.jpg", IsDeleted = false },
-                new Category { Id = 9, Name = "Appliances", ImageURL = "category-9.jpg", IsDeleted = false },
-                new Category { Id = 10, Name = "Camera", ImageURL = "category-10.jpg", IsDeleted = false },
-                new Category { Id = 11, Name = "Cases", ImageURL = "category-11.jpg", IsDeleted = false },
-                new Category { Id = 12, Name = "Home Tech", ImageURL = "category-12.jpg", IsDeleted = false },
-                new Category { Id = 13, Name = "Notebooks", ImageURL = "category-13.jpg", IsDeleted = false },
-                new Category { Id = 14, Name = "Tops & Sets", ImageURL = "category-14.jpg", IsDeleted = false }
+                new Category { Id = 1, Name = "Laptop", ImageURL = "category-1.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 2, Name = "Computer", ImageURL = "category-2.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 3, Name = "Smartphone", ImageURL = "category-3.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 4, Name = "Game Consoles", ImageURL = "category-4.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 5, Name = "Headphones", ImageURL = "category-5.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 6, Name = "Monitor", ImageURL = "category-6.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 7, Name = "Audio & Video", ImageURL = "category-7.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 8, Name = "Accessories", ImageURL = "category-8.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 9, Name = "Appliances", ImageURL = "category-9.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 10, Name = "Camera", ImageURL = "category-10.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 11, Name = "Cases", ImageURL = "category-11.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 12, Name = "Home Tech", ImageURL = "category-12.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 13, Name = "Notebooks", ImageURL = "category-13.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 14, Name = "Tops & Sets", ImageURL = "category-14.jpg", CreatedAt = DateTime.Now }
             );
 
             modelBuilder.Entity<Brand>().HasData(

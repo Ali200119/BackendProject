@@ -262,7 +262,9 @@ C:\Users\aliit\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Views\
 C:\Users\aliit\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\aliit\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Views\Shop\Index.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_AdminLayout.cshtml.g.cs
-C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_AdminValidationScriptsPartial.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Dashboard\Index.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewImports.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\_ViewStart.cshtml.g.cs
+C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Index.cshtml.g.cs
+C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Create.cshtml.g.cs
+C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Shared\_AdminValidationScriptsPartial.cshtml.g.cs

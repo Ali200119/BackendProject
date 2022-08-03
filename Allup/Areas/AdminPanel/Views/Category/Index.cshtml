@@ -1,0 +1,31 @@
+﻿@model List<Category>
+
+@{
+    ViewBag.Title = "All categories";
+    int No = 1;
+}
+
+<table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Created time</th>
+                                        <th scope="col">Settings</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                   {
+                                    <tr>
+                                       <td scope="row">@(No++)</td>
+                                       <td>@item.Name</td>
+                                       <td>@item.CreatedAt.Value.ToString("MM/dd/yyyy HH:mm")</td>
+                                       <td>
+                                           <a asp-action="update" asp-route-id="@item.Id"><i class="bi bi-pencil-fill" style="color: green; font-size: larger"></i></a>&nbsp;&nbsp;
+                                           <a asp-action="delete" asp-route-id="@item.Id"><i class="bi bi-trash-fill" style="color: red; font-size: larger"></i></a>
+                                       </td>
+                                    </tr>
+                                   }
+                                </tbody>
+</table>
