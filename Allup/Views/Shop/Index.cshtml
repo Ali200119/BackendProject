@@ -103,7 +103,7 @@
                                             </ul>
                                             @if (item.DiscountPrice != null)
                                             {
-                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                                <span class="discount-product">-@((100 - (item.DiscountPrice * 100 / item.Price)).Value.ToString("#"))%</span>
                                             }
                                         </div>
                                         <div class="product-content">
@@ -118,9 +118,13 @@
                                             <div class="product-price">
                                                 @if (item.DiscountPrice != null)
                                                 {
-                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                    <span class="regular-price ">$@item.Price</span>
+                                                    <span class="price-sale">$@item.DiscountPrice</span>
                                                 }
-                                                <span class="price-sale">$@item.Price</span>
+                                                @if (item.DiscountPrice == null)
+                                                {
+                                                    <span class="price-sale ">$@item.Price</span>
+                                                }
                                             </div>
                                         </div>
                                     </div> <!-- single product -->
@@ -156,7 +160,7 @@
                                             </a>
                                             @if (item.DiscountPrice != null)
                                             {
-                                                <span class="discount-product">-@(100 - (item.DiscountPrice * 100 / item.Price))%</span>
+                                                <span class="discount-product">-@((100 - (item.DiscountPrice * 100 / item.Price)).Value.ToString("#"))%</span>
                                             }
                                         </div>
                                     </div>
@@ -174,9 +178,13 @@
                                             <div class="product-price">
                                                 @if (item.DiscountPrice != null)
                                                 {
-                                                    <span class="regular-price ">$@item.DiscountPrice</span>
+                                                    <span class="regular-price ">$@item.Price</span>
+                                                    <span class="price-sale">$@item.DiscountPrice</span>
                                                 }
-                                                <span class="price-sale">$@item.Price</span>
+                                                @if (item.DiscountPrice == null)
+                                                {
+                                                    <span class="price-sale ">$@item.Price</span>
+                                                }
                                             </div>
                                             <p>@item.Description</p>
                                             <ul class="product-meta">
