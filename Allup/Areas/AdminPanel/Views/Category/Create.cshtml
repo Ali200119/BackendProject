@@ -5,20 +5,16 @@
 }
 
 <form method="post">
-                            <div style="margin-top: 25px; margin-left: 30px" class="form-floating mb-3">
-                                <input asp-for="Name" class="form-control" id="floatingInput"
-                                    placeholder="Name">
-                                <label asp-for="Name"></label>
-                                <span asp-validation-for="Name" style="color: red"></span>
-                            </div>
-                            <div style="margin-top: 40px; margin-left: 30px" class="mb-3">
-                                <label asp-for="Image" class="form-label">Upload categorie's image</label>
-                                <input asp-for="Image" class="form-control bg-dark" id="formFile">
-                            </div>
+    <div style="margin-top: 25px; margin-left: 30px" class="form-floating mb-3">
+        <input asp-for="Name" class="form-control" id="floatingInput"
+               placeholder="Name">
+        <label asp-for="Name"></label>
+        <span asp-validation-for="Name" style="color: red"></span>
+    </div>
+    <div style="margin-top: 40px; margin-left: 30px" class="mb-3">
+        <label asp-for="Image" class="form-label">Upload categorie's image</label>
+        <input asp-for="Image" class="form-control bg-dark" id="formFile">
+    </div>
 
-                            <button style="margin-top: 40px; margin-left: 30px" type="submit" class="btn btn-primary">Submit</button>
+    <button style="margin-top: 40px; margin-left: 30px" type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-@section Scripts{
-    <partial name= "_AdminValidationScriptsPartial"/>
-}
