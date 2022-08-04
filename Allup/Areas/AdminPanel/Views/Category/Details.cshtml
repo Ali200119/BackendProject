@@ -1,0 +1,15 @@
+﻿@model Category
+
+@{
+    ViewBag.Title = "Category details";
+}
+
+<dl style="margin-top: 25px; margin-left: 30px" class="row mb-0">
+                                <dt class="col-sm-4">Name</dt>
+                                <dd class="col-sm-8">@Model.Name</dd>
+
+                                <dt class="col-sm-4">Image</dt>
+                                <dd class="col-sm-8"><img src="~/assets/images/" width="100" height="100"/></dd>
+</dl>
+
+<a style="margin-top: 40px; margin-left: 30px" class="btn btn-light" asp-action="index">Go back</a>

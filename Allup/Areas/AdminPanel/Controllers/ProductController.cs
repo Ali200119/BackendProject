@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Allup.Areas.AdminPanel.Controllers
 {
@@ -39,6 +40,17 @@ namespace Allup.Areas.AdminPanel.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            Product product = _context.Products.Include(p => p.Category).Include(p => p.Brand).FirstOrDefault(p=>p.Id == id);
+
+            if (product == null) return NotFound();
+
+            return View(product);
         }
     }
 }

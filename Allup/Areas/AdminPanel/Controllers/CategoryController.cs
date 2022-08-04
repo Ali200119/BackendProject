@@ -3,6 +3,7 @@ using Allup.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Allup.Areas.AdminPanel.Controllers
 {
@@ -38,6 +39,17 @@ namespace Allup.Areas.AdminPanel.Controllers
             }
 
             return View();
+        }
+
+        public IActionResult Details(int? id)
+        {
+            if (id == null) return NotFound();
+
+            Category category = _context.Categories.FirstOrDefault(c=>c.Id == id);
+
+            if (category == null) return NotFound();
+
+            return View(category);
         }
     }
 }

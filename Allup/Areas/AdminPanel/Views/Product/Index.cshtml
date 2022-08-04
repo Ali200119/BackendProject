@@ -12,12 +12,6 @@
             <th scope="col">Name</th>
             <th scope="col">Price</th>
             <th scope="col">Discount Price</th>
-            <th scope="col">Category</th>
-            <th scope="col">Brand</th>
-            <th scope="col">Featured</th>
-            <th scope="col">New Arrival</th>
-            <th scope="col">Bestseller</th>
-            <th scope="col">Special Product</th>
             <th scope="col">Created time</th>
             <th scope="col">Stock Count</th>
             <th scope="col">Settings</th>
@@ -29,7 +23,7 @@
         <tr>
             <td scope="row">@(No++)</td>
             <td>@item.Name</td>
-            <td>@item.Price$</td>
+            <td>$@item.Price</td>
             @if (item.DiscountPrice == null)
             {
                 <td>This product is not at discount</td>
@@ -37,46 +31,13 @@
 
             @if (item.DiscountPrice != null)
             {
-                <td>@item.DiscountPrice</td>
-            }
-            <td>@item.Category.Name</td>
-            <td>@item.Brand.Name</td>
-            @if (item.IsFeatured)
-            {
-                <td>Yes</td>
-            }
-            @if (!item.IsFeatured)
-            {
-                <td>No</td>
-            }
-            @if (item.IsNewArrival)
-            {
-                <td>Yes</td>
-            }
-            @if (!item.IsNewArrival)
-            {
-                <td>No</td>
-            }
-            @if (item.IsBestseller)
-            {
-                <td>Yes</td>
-            }
-            @if (!item.IsBestseller)
-            {
-                <td>No</td>
-            }
-            @if (item.IsSpecialProduct)
-            {
-                <td>Yes</td>
-            }
-            @if (!item.IsSpecialProduct)
-            {
-                <td>No</td>
+                <td>$@item.DiscountPrice</td>
             }
             <td>@item.CreatedAt.Value.ToString("MM/dd/yyyy HH:mm")</td>
             <td>@item.StockCount</td>
             <td>
                 <a asp-action="update" asp-route-id="@item.Id"><i class="bi bi-pencil-fill" style="color: green; font-size: larger"></i></a>&nbsp;&nbsp;
+                <a asp-action="details" asp-route-id="@item.Id"><i class="bi bi-file-post" style="color: cornflowerblue; font-size: larger"></i></a>&nbsp;&nbsp;
                 <a asp-action="delete" asp-route-id="@item.Id"><i class="bi bi-trash-fill" style="color: red; font-size: larger"></i></a>
             </td>
         </tr>
