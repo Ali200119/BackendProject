@@ -14,7 +14,9 @@
 
 ## 📦 NuGet Packages
 
-- ```bash Microsoft.AspNetCore.Identity.EntityFrameworkCore ```
+- ```bash
+Microsoft.AspNetCore.Identity.EntityFrameworkCore
+```
 
 
 ## 📝 Note
