@@ -1,3 +1,22 @@
+## 🧩 Modules
+
+- User
+- Slider
+- Banner
+- Category
+- Product
+- ProductIamges
+- Brand
+- Blog
+- Features
+- Quotes
+
+
+## 📦 NuGet Packages
+
+- ```bash Microsoft.AspNetCore.Identity.EntityFrameworkCore ```
+
+
 ## 📝 Note
 You must add appsettings.json file
 
