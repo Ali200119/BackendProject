@@ -14,13 +14,15 @@
 
 ## 📦 NuGet Packages
 
-- ```bash
-Microsoft.AspNetCore.Identity.EntityFrameworkCore
-```
+- Microsoft.AspNetCore.Identity.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore
+- Microsoft.EntityFrameworkCore.Design
+- Microsoft.EntityFrameworkCore.Tools
+- Microsoft.EntityFrameworkCore.SqlServer
 
 
 ## 📝 Note
-You must add appsettings.json file
+You must add *appsettings.json* file
 
 ```bash
 {
