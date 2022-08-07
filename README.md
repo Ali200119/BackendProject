@@ -1,4 +1,4 @@
-## Note
+## 📝 Note
 You must add appsettings.json file
 
 ```bash
