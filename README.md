@@ -27,7 +27,7 @@ You must add `appsettings.json` file
 ```bash
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=`*CHANGE ME*`;Database=Allup;Trusted_Connection=True;MultipleActiveResultSets=true"
+    "DefaultConnection": "Server=*CHANGE ME*;Database=Allup;Trusted_Connection=True;MultipleActiveResultSets=true"
   }
 }
 ```
