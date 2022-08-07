@@ -22,7 +22,7 @@
 
 
 ## 📝 Note
-You must add # appsettings.json file
+You must add appsettings.json file
 
 ```bash
 {
