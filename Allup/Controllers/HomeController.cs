@@ -26,11 +26,6 @@ namespace Allup.Controllers
 
             homeVM.Categories = _context.Categories.ToList();
 
-            homeVM.BasketItems = _context.BasketItems
-                .Include(b => b.User)
-                .Include(b => b.Product)
-                .ToList();
-
             homeVM.Blogs = _context.Blogs.ToList();
 
             homeVM.Brands = _context.Brands.ToList();

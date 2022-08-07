@@ -82,7 +82,7 @@
                                 <dd class="col-sm-8">@Model.StockCount</dd>
 
                                 <dt class="col-sm-4">Description</dt>
-                                <dd class="col-sm-8">@Model.Description</dd>
+                                <dd class="col-sm-8">@Html.Raw(Model.Description)</dd>
 </dl>
 
 <a style="margin-top: 40px; margin-left: 30px" class="btn btn-light" asp-action="index">Go back</a>

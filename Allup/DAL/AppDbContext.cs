@@ -16,9 +16,6 @@ namespace Allup.DAL
         public DbSet<Category> Categories { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Brand> Brands { get; set; }
-        public DbSet<BasketItem> BasketItems { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<Quotes> Quotes { get; set; }
         public DbSet<Slider> Sliders { get; set; }
@@ -63,18 +60,18 @@ namespace Allup.DAL
                 new Category { Id = 10, Name = "Camera", ImageURL = "category-10.jpg", CreatedAt = DateTime.Now },
                 new Category { Id = 11, Name = "Cases", ImageURL = "category-11.jpg", CreatedAt = DateTime.Now },
                 new Category { Id = 12, Name = "Home Tech", ImageURL = "category-12.jpg", CreatedAt = DateTime.Now },
-                new Category { Id = 13, Name = "Notebooks", ImageURL = "category-13.jpg", CreatedAt = DateTime.Now },
-                new Category { Id = 14, Name = "Tops & Sets", ImageURL = "category-14.jpg", CreatedAt = DateTime.Now }
+                new Category { Id = 13, Name = "Notebooks", ImageURL = "category-1.jpg", CreatedAt = DateTime.Now },
+                new Category { Id = 14, Name = "Tops & Sets", ImageURL = "category-12.jpg", CreatedAt = DateTime.Now }
             );
 
             modelBuilder.Entity<Brand>().HasData(
 
-                new Brand { Id = 1, Name = "Ostrich Cafe", ImageURL = "brand-1.jpg", IsDeleted = false },
-                new Brand { Id = 2, Name = "Golden", ImageURL = "brand-2.jpg", IsDeleted = false },
-                new Brand { Id = 3, Name = "Norcold", ImageURL = "brand-3.jpg", IsDeleted = false },
-                new Brand { Id = 4, Name = "Climb The Mountain", ImageURL = "brand-4.jpg", IsDeleted = false },
-                new Brand { Id = 5, Name = "David Smith", ImageURL = "brand-5.jpg", IsDeleted = false },
-                new Brand { Id = 6, Name = "Avant Agarde", ImageURL = "brand-6.jpg", IsDeleted = false }
+                new Brand { Id = 1, Name = "Ostrich Cafe", ImageURL = "brand-1.jpg" },
+                new Brand { Id = 2, Name = "Golden", ImageURL = "brand-2.jpg" },
+                new Brand { Id = 3, Name = "Norcold", ImageURL = "brand-3.jpg" },
+                new Brand { Id = 4, Name = "Climb The Mountain", ImageURL = "brand-4.jpg" },
+                new Brand { Id = 5, Name = "David Smith", ImageURL = "brand-5.jpg" },
+                new Brand { Id = 6, Name = "Avant Agarde", ImageURL = "brand-6.jpg" }
             );
 
             modelBuilder.Entity<Blog>().HasData(

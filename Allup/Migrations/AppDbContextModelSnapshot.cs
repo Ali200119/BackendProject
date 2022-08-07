@@ -51,37 +51,6 @@ namespace Allup.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Allup.Models.BasketItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("BasketItems");
-                });
-
             modelBuilder.Entity("Allup.Models.Blog", b =>
                 {
                     b.Property<int>("Id")
@@ -156,9 +125,6 @@ namespace Allup.Migrations
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -174,42 +140,36 @@ namespace Allup.Migrations
                         {
                             Id = 1,
                             ImageURL = "brand-1.jpg",
-                            IsDeleted = false,
                             Name = "Ostrich Cafe"
                         },
                         new
                         {
                             Id = 2,
                             ImageURL = "brand-2.jpg",
-                            IsDeleted = false,
                             Name = "Golden"
                         },
                         new
                         {
                             Id = 3,
                             ImageURL = "brand-3.jpg",
-                            IsDeleted = false,
                             Name = "Norcold"
                         },
                         new
                         {
                             Id = 4,
                             ImageURL = "brand-4.jpg",
-                            IsDeleted = false,
                             Name = "Climb The Mountain"
                         },
                         new
                         {
                             Id = 5,
                             ImageURL = "brand-5.jpg",
-                            IsDeleted = false,
                             Name = "David Smith"
                         },
                         new
                         {
                             Id = 6,
                             ImageURL = "brand-6.jpg",
-                            IsDeleted = false,
                             Name = "Avant Agarde"
                         });
                 });
@@ -230,11 +190,10 @@ namespace Allup.Migrations
                     b.Property<string>("ImageURL")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -247,113 +206,99 @@ namespace Allup.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(4266),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(8195),
                             ImageURL = "category-1.jpg",
-                            IsDeleted = false,
                             Name = "Laptop"
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(4966),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9463),
                             ImageURL = "category-2.jpg",
-                            IsDeleted = false,
                             Name = "Computer"
                         },
                         new
                         {
                             Id = 3,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5026),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9552),
                             ImageURL = "category-3.jpg",
-                            IsDeleted = false,
                             Name = "Smartphone"
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5042),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9573),
                             ImageURL = "category-4.jpg",
-                            IsDeleted = false,
                             Name = "Game Consoles"
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5056),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9592),
                             ImageURL = "category-5.jpg",
-                            IsDeleted = false,
                             Name = "Headphones"
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5070),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9611),
                             ImageURL = "category-6.jpg",
-                            IsDeleted = false,
                             Name = "Monitor"
                         },
                         new
                         {
                             Id = 7,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5084),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9630),
                             ImageURL = "category-7.jpg",
-                            IsDeleted = false,
                             Name = "Audio & Video"
                         },
                         new
                         {
                             Id = 8,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5098),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9649),
                             ImageURL = "category-8.jpg",
-                            IsDeleted = false,
                             Name = "Accessories"
                         },
                         new
                         {
                             Id = 9,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5112),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9668),
                             ImageURL = "category-9.jpg",
-                            IsDeleted = false,
                             Name = "Appliances"
                         },
                         new
                         {
                             Id = 10,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5125),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9686),
                             ImageURL = "category-10.jpg",
-                            IsDeleted = false,
                             Name = "Camera"
                         },
                         new
                         {
                             Id = 11,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5137),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9706),
                             ImageURL = "category-11.jpg",
-                            IsDeleted = false,
                             Name = "Cases"
                         },
                         new
                         {
                             Id = 12,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5151),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9725),
                             ImageURL = "category-12.jpg",
-                            IsDeleted = false,
                             Name = "Home Tech"
                         },
                         new
                         {
                             Id = 13,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5166),
-                            ImageURL = "category-13.jpg",
-                            IsDeleted = false,
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9744),
+                            ImageURL = "category-1.jpg",
                             Name = "Notebooks"
                         },
                         new
                         {
                             Id = 14,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 492, DateTimeKind.Local).AddTicks(5179),
-                            ImageURL = "category-14.jpg",
-                            IsDeleted = false,
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 171, DateTimeKind.Local).AddTicks(9763),
+                            ImageURL = "category-12.jpg",
                             Name = "Tops & Sets"
                         });
                 });
@@ -416,69 +361,6 @@ namespace Allup.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Allup.Models.Order", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrderStatus")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Orders");
-                });
-
-            modelBuilder.Entity("Allup.Models.OrderItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Count")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrderId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<double>("TotalPrice")
-                        .HasColumnType("float");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("OrderItems");
-                });
-
             modelBuilder.Entity("Allup.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -510,9 +392,6 @@ namespace Allup.Migrations
                     b.Property<bool>("IsComputer")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsFeatured")
                         .HasColumnType("bit");
 
@@ -529,6 +408,7 @@ namespace Allup.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Price")
@@ -554,11 +434,10 @@ namespace Allup.Migrations
                             Id = 1,
                             BrandId = 3,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 488, DateTimeKind.Local).AddTicks(4613),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 162, DateTimeKind.Local).AddTicks(4666),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -573,12 +452,11 @@ namespace Allup.Migrations
                             Id = 2,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(3100),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(6266),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 21.899999999999999,
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = true,
                             IsNewArrival = false,
@@ -593,11 +471,10 @@ namespace Allup.Migrations
                             Id = 3,
                             BrandId = 6,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(4360),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(8169),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = false,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -612,11 +489,10 @@ namespace Allup.Migrations
                             Id = 4,
                             BrandId = 1,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(4871),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9088),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = false,
@@ -631,11 +507,10 @@ namespace Allup.Migrations
                             Id = 5,
                             BrandId = 4,
                             CategoryId = 7,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(4930),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9179),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = true,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -650,11 +525,10 @@ namespace Allup.Migrations
                             Id = 6,
                             BrandId = 1,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(4959),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9224),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = false,
                             IsGameConsoles = true,
                             IsNewArrival = true,
@@ -669,11 +543,10 @@ namespace Allup.Migrations
                             Id = 7,
                             BrandId = 4,
                             CategoryId = 10,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(4988),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9266),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -688,11 +561,10 @@ namespace Allup.Migrations
                             Id = 8,
                             BrandId = 2,
                             CategoryId = 4,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(5013),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9310),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = true,
                             IsNewArrival = true,
@@ -707,11 +579,10 @@ namespace Allup.Migrations
                             Id = 9,
                             BrandId = 3,
                             CategoryId = 5,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(5030),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9333),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = false,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -726,11 +597,10 @@ namespace Allup.Migrations
                             Id = 10,
                             BrandId = 5,
                             CategoryId = 14,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(5044),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9354),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = true,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = false,
@@ -745,11 +615,10 @@ namespace Allup.Migrations
                             Id = 11,
                             BrandId = 5,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(5059),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9375),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             IsBestseller = false,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = true,
                             IsGameConsoles = false,
                             IsNewArrival = true,
@@ -764,12 +633,11 @@ namespace Allup.Migrations
                             Id = 12,
                             BrandId = 6,
                             CategoryId = 12,
-                            CreatedAt = new DateTime(2022, 8, 3, 14, 58, 13, 490, DateTimeKind.Local).AddTicks(5090),
+                            CreatedAt = new DateTime(2022, 8, 7, 20, 27, 22, 167, DateTimeKind.Local).AddTicks(9419),
                             Description = "Block out the haters with the fresh adidas® Originals Kaval Windbreaker Jacket. Part of the Kaval Collection. Regular fit is eased, but not sloppy, and perfect for any activity. Plain-woven jacket specifically constructed for freedom of movement.",
                             DiscountPrice = 26.100000000000001,
                             IsBestseller = true,
                             IsComputer = false,
-                            IsDeleted = false,
                             IsFeatured = false,
                             IsGameConsoles = true,
                             IsNewArrival = true,
@@ -1352,41 +1220,6 @@ namespace Allup.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Allup.Models.BasketItem", b =>
-                {
-                    b.HasOne("Allup.Models.Product", "Product")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Allup.Models.User", "User")
-                        .WithMany("BasketItems")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Allup.Models.Order", b =>
-                {
-                    b.HasOne("Allup.Models.User", "User")
-                        .WithMany("Orders")
-                        .HasForeignKey("UserId");
-                });
-
-            modelBuilder.Entity("Allup.Models.OrderItem", b =>
-                {
-                    b.HasOne("Allup.Models.Order", "Order")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Allup.Models.Product", "Product")
-                        .WithMany("OrderItems")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Allup.Models.Product", b =>

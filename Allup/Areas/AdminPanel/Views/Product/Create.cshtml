@@ -1,0 +1,33 @@
+﻿@model Product
+
+@{
+    ViewBag.Title = "New product";
+}
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-floating mb-3">
+                                <input asp-for="Name" class="form-control" id="floatingInput"
+                                    placeholder="Name">
+                                <label asp-for="Name"></label>
+</div>
+<div style="margin-top: 40px; margin-left: 20px" class="form-floating mb-3">
+                                <input asp-for="Price" class="form-control" id="floatingInput"
+                                    placeholder="Price">
+                                <label asp-for="Price"></label>
+</div>
+<div style="margin-top: 40px; margin-left: 20px" class="form-floating">
+                                <textarea asp-for="Description" class="form-control" placeholder="Write product's description"
+                                    id="floatingTextarea" style="height: 150px;"></textarea>
+                                <label asp-for="Description"></label>
+</div>
+
+@section Scripts{
+    <script src="https://cdn.ckeditor.com/ckeditor5/35.0.1/classic/ckeditor.js"></script>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector("#floatingTextarea"))
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+}

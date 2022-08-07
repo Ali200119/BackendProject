@@ -13,11 +13,10 @@ namespace Allup.Models
         [Required, MaxLength(20)]
         public string Name { get; set; }
 
-        [NotMapped, Required]
+        [NotMapped]
         public IFormFile Image { get; set; }
         public string ImageURL { get; set; }
         public List<Product> Products { get; set; }
-        public bool IsDeleted { get; set; }
         public Nullable<DateTime> CreatedAt { get; set; }
         public Nullable<DateTime> UpdatedAt { get; set; }
         public Nullable<DateTime> DeletedAt { get; set; }

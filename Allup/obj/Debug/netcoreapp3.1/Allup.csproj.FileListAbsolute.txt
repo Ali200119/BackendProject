@@ -279,3 +279,5 @@ C:\Users\aliit\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Index.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Details.cshtml.g.cs
 C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Details.cshtml.g.cs
+C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Category\Update.cshtml.g.cs
+C:\Users\talib\Desktop\BackendProject\Allup\obj\Debug\netcoreapp3.1\Razor\Areas\AdminPanel\Views\Product\Create.cshtml.g.cs
