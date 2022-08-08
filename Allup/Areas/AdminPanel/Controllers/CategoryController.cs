@@ -81,11 +81,11 @@ namespace Allup.Areas.AdminPanel.Controllers
         {
             if (id == null) return NotFound();
 
-            Category category = _context.Categories.FirstOrDefault(c=>c.Id == id);
+            Category dbcategory = _context.Categories.FirstOrDefault(c=>c.Id == id);
 
-            if (category == null) return NotFound();
+            if (dbcategory == null) return NotFound();
 
-            return View(category);
+            return View(dbcategory);
         }
 
         public IActionResult Update(int? id)

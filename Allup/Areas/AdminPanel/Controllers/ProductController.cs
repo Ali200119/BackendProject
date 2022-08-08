@@ -3,6 +3,7 @@ using Allup.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -29,15 +30,17 @@ namespace Allup.Areas.AdminPanel.Controllers
         public IActionResult Create()
         {
             ViewBag.Categories = new SelectList(_context.Categories.ToList(), "Id", "Name");
-            
+            ViewBag.Brands = new SelectList(_context.Brands.ToList(), "Id", "Name");
+
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Product product)
+        public async Task<IActionResult> Create(Product product)
         {
             ViewBag.Categories = new SelectList(_context.Categories.ToList(), "Id", "Name");
+            ViewBag.Brands = new SelectList(_context.Brands.ToList(), "Id", "Name");
 
             if (!ModelState.IsValid)
             {
@@ -48,30 +51,87 @@ namespace Allup.Areas.AdminPanel.Controllers
 
             if (CategoryNameExist)
             {
-                ModelState.AddModelError("Name", "Category with this name is already exist");
+                ModelState.AddModelError("Name", "Product with this name is already exist");
                 return View();
             }
 
-            if (product.Image == null)
+            Product newProduct = new Product()
             {
-                ModelState.AddModelError("Iamge", "The Image field is required");
-                return View();
-            }
-
-            if (!category.Image.IsImage())
-            {
-                ModelState.AddModelError("Image", "Please add only image");
-                return View();
-            }
-
-            Category newCategory = new Category()
-            {
-                Name = category.Name,
-                CreatedAt = DateTime.Now,
-                ImageURL = await category.Image.SaveImage(_env, "assets", "images")
+                Name = product.Name,
+                Price = product.Price,
+                DiscountPrice = product.DiscountPrice,
+                CategoryId = product.CategoryId,
+                BrandId = product.BrandId,
+                IsFeatured = product.IsFeatured,
+                IsBestseller = product.IsBestseller,
+                IsNewArrival = product.IsNewArrival,
+                IsComputer = product.IsComputer,
+                IsSmartphone = product.IsSmartphone,
+                IsGameConsoles = product.IsGameConsoles,
+                StockCount = product.StockCount,
+                IsSpecialProduct = product.IsSpecialProduct,
+                Description = product.Description,
+                CreatedAt = DateTime.Now
             };
 
-            await _context.Categories.AddAsync(newCategory);
+            await _context.Products.AddAsync(newProduct);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("index");
+        }
+
+        public IActionResult Update(int? id)
+        {
+            if (id == null) return NotFound();
+
+            Product dbProduct = _context.Products.FirstOrDefault(p => p.Id == id);
+
+            if (dbProduct == null) return NotFound();
+
+            return View(dbProduct);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            Product dbProduct = _context.Products.Include(p => p.Category).Include(p => p.Brand).FirstOrDefault(p => p.Id == product.Id);
+
+            Product dbProductName = _context.Products.FirstOrDefault(c => c.Name.ToLower() == product.Name.ToLower());
+
+            if (dbProduct == null) return NotFound();
+
+            if (dbProduct != null)
+            {
+                if (dbProduct.Name != dbProductName.Name)
+                {
+                    ModelState.AddModelError("Name", "Product with this name is already exist");
+                    return View();
+                }
+            }
+
+            dbProduct.Name = product.Name;
+            dbProduct.Price = product.Price;
+            dbProduct.DiscountPrice = product.DiscountPrice;
+            dbProduct.CategoryId = product.CategoryId;
+            dbProduct.BrandId = product.BrandId;
+            dbProduct.IsFeatured = product.IsFeatured;
+            dbProduct.IsBestseller = product.IsBestseller;
+            dbProduct.IsNewArrival = product.IsNewArrival;
+            dbProduct.IsComputer = product.IsComputer;
+            dbProduct.IsSmartphone = product.IsSmartphone;
+            dbProduct.IsGameConsoles = product.IsGameConsoles;
+            dbProduct.StockCount = product.StockCount;
+            dbProduct.IsSpecialProduct = product.IsSpecialProduct;
+            dbProduct.Description = product.Description;
+            dbProduct.UpdatedAt = DateTime.Now;
+
+
             await _context.SaveChangesAsync();
 
             return RedirectToAction("index");

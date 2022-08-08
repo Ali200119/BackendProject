@@ -9,11 +9,70 @@
                                     placeholder="Name">
                                 <label asp-for="Name"></label>
 </div>
+
 <div style="margin-top: 40px; margin-left: 20px" class="form-floating mb-3">
                                 <input asp-for="Price" class="form-control" id="floatingInput"
                                     placeholder="Price">
                                 <label asp-for="Price"></label>
 </div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-floating mb-3">
+                                <input asp-for="DiscountPrice" class="form-control" id="floatingInput"
+                                    placeholder="DiscountPrice">
+                                <label asp-for="DiscountPrice"></label>
+</div>
+
+<select style="margin-top: 40px; margin-left: 20px" asp-items="ViewBag.Categories" class="form-select mb-3" aria-label="Choose category">
+                                <option selected>Open this select menu</option>
+</select>
+
+<select style="margin-top: 40px; margin-left: 20px" asp-items="ViewBag.Brands" class="form-select mb-3" aria-label="Choose brand">
+                                <option selected>Open this select menu</option>
+</select>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-check form-switch">
+                                <input asp-for="IsFeatured" class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label asp-for="IsFeatured" class="form-check-label" >Featured</label>
+</div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-check form-switch">
+                                <input asp-for="IsBestseller" class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label asp-for="IsBestseller" class="form-check-label" >Bestseller</label>
+</div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-check form-switch">
+                                <input asp-for="IsNewArrival" class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label asp-for="IsNewArrival" class="form-check-label" >New Arrival</label>
+</div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-check form-check-inline">
+                                <input asp-for="IsComputer" class="form-check-input" type="radio">
+                                <label asp-for="IsComputer" class="form-check-label" >Computer</label>
+</div>
+<div style="margin-top: 40px; margin-left: 20px"  class="form-check form-check-inline">
+                                <input asp-for="IsSmartphone" class="form-check-input" type="radio">
+                                <label asp-for="IsSmartphone" class="form-check-label" >Smartphone</label>
+</div>
+<div style="margin-top: 40px; margin-left: 20px"  class="form-check form-check-inline">
+                                <input asp-for="IsGameConsoles" class="form-check-input" type="radio">
+                                <label asp-for="IsGameConsoles" class="form-check-label" >Game Consoles</label>
+</div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-floating mb-3">
+                                <input asp-for="StockCount" class="form-control" id="floatingInput"
+                                    placeholder="Stock Count">
+                                <label asp-for="StockCount">Stock Count</label>
+</div>
+
+<div style="margin-top: 40px; margin-left: 20px" class="form-check form-switch">
+                                <input asp-for="IsSpecialProduct" class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckDefault">
+                                <label asp-for="IsSpecialProduct" class="form-check-label" >Special Product</label>
+</div>
+
 <div style="margin-top: 40px; margin-left: 20px" class="form-floating">
                                 <textarea asp-for="Description" class="form-control" placeholder="Write product's description"
                                     id="floatingTextarea" style="height: 150px;"></textarea>

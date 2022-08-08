@@ -9,7 +9,7 @@
                                 <dd class="col-sm-8">@Model.Name</dd>
 
                                 <dt class="col-sm-4">Images</dt>
-                                <dd class="col-sm-8"><img src="~/assets/images/" width="100" height="100"/></dd>
+                                <dd class="col-sm-8"><img src="~/assets/images/@Model.ProductImages.Find(i=>i.IsMain).ImageURL" width="100" height="100"/></dd>
 
                                 <dt class="col-sm-4">Category</dt>
                                 <dd class="col-sm-8">@Model.Category.Name</dd>
@@ -77,6 +77,17 @@
 
                                 <dt class="col-sm-4">Created at</dt>
                                 <dd class="col-sm-8">@Model.CreatedAt.Value.ToString("MM/dd/yyyy HH:mm")</dd>
+
+                                <dt class="col-sm-4">Updated at</dt>
+                                @if (Model.UpdatedAt == null)
+                                {
+                                    <dd class="col-sm-8">You haven't updated this product yet</dd>
+                                }
+
+                                @if (Model.UpdatedAt != null)
+                                {
+                                    <dd class="col-sm-8">@Model.UpdatedAt.Value.ToString("MM/dd/yyyy HH:mm")</dd>
+                                }
 
                                 <dt class="col-sm-4">Stock count</dt>
                                 <dd class="col-sm-8">@Model.StockCount</dd>

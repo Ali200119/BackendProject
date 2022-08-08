@@ -11,7 +11,6 @@
                                         <th scope="col">No</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Image</th>
-                                        <th scope="col">Created time</th>
                                         <th scope="col">Settings</th>
                                     </tr>
                                 </thead>
@@ -22,7 +21,6 @@
                                        <td scope="row">@(No++)</td>
                                        <td>@item.Name</td>
                                        <td><img src="~/assets/images/@item.ImageURL" width="100" height="100"/></td>
-                                       <td>@item.CreatedAt.Value.ToString("MM/dd/yyyy HH:mm")</td>
                                        <td>
                                            <a asp-action="update" asp-route-id="@item.Id"><i class="bi bi-pencil-fill" style="color: green; font-size: larger"></i></a>&nbsp;&nbsp;
                                            <a asp-action="details" asp-route-id="@item.Id"><i class="bi bi-file-post" style="color: cornflowerblue; font-size: larger"></i></a>&nbsp;&nbsp;
