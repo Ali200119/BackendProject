@@ -130,7 +130,16 @@ namespace Allup.Areas.AdminPanel.Controllers
             }
 
             dbCategory.Name = category.Name;
-            dbCategory.ImageURL = await category.Image.SaveImage(_env, "assets", "images");
+
+            if (category.Image == null)
+            {
+                dbCategory.ImageURL = dbCategory.ImageURL;
+            }
+
+            if (category.Image != null)
+            {
+                dbCategory.ImageURL = await category.Image.SaveImage(_env, "assets", "images");
+            }
 
             await _context.SaveChangesAsync();
 
