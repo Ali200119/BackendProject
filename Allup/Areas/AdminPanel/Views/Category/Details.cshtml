@@ -9,7 +9,7 @@
                                 <dd class="col-sm-8">@Model.Name</dd>
 
                                 <dt class="col-sm-4">Image</dt>
-                                <dd class="col-sm-8"><img src="~/assets/images/" width="100" height="100"/></dd>
+                                <dd class="col-sm-8"><img src="~/assets/images/@Model.ImageURL" width="100" height="100"/></dd>
 
                                 <dt class="col-sm-4">Created at</dt>
                                 <dd class="col-sm-8">@Model.CreatedAt.Value.ToString("MM/dd/yyyy HH:mm")</dd>

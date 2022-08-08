@@ -141,7 +141,7 @@ namespace Allup.Areas.AdminPanel.Controllers
         {
             if (id == null) return NotFound();
 
-            Product dbProduct = _context.Products.Include(p => p.Category).Include(p => p.Brand).FirstOrDefault(p=>p.Id == id);
+            Product dbProduct = _context.Products.Include(pi=>pi.ProductImages).Include(p => p.Category).Include(p => p.Brand).FirstOrDefault(p=>p.Id == id);
 
             if (dbProduct == null) return NotFound();
 

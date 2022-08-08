@@ -9,7 +9,15 @@
                                 <dd class="col-sm-8">@Model.Name</dd>
 
                                 <dt class="col-sm-4">Images</dt>
-                                <dd class="col-sm-8"><img src="~/assets/images/@Model.ProductImages.Find(i=>i.IsMain).ImageURL" width="100" height="100"/></dd>
+                                <dd class="col-sm-8">
+                                    @foreach (var item in Model.ProductImages)
+                                    {
+                                        if (item.IsMain)
+                                        {
+                                            <img src="~/assets/images/product/@item.ImageURL" width="100" height="100" />
+                                        }
+                                    }
+                                                            </dd>
 
                                 <dt class="col-sm-4">Category</dt>
                                 <dd class="col-sm-8">@Model.Category.Name</dd>
