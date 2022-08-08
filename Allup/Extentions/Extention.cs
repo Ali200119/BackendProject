@@ -13,12 +13,12 @@ namespace Allup.Extentions
             return file.ContentType.Contains("image/");
         }
 
-        public static async Task<string> SaveImage(this IFormFile file, IWebHostEnvironment env, params string[] folder)
+        public static async Task<string> SaveImage(this IFormFile file, IWebHostEnvironment env,  string folder1, string folder2)
         {
 
             string filename = Guid.NewGuid().ToString() + file.FileName;
             
-            string path = Path.Combine(env.WebRootPath, folder[i], filename);
+            string path = Path.Combine(env.WebRootPath, folder1, folder2, filename);
 
             using (FileStream fs = new FileStream(path, FileMode.Create))
             {
