@@ -68,7 +68,7 @@ namespace Allup.Areas.AdminPanel.Controllers
             {
                 Name = category.Name,
                 CreatedAt = DateTime.Now,
-                ImageURL = await category.Image.SaveImage(_env, "assets", "images")
+                ImageURL = await category.Image.SaveImageF2(_env, "assets", "images")
             };
 
             await _context.Categories.AddAsync(newCategory);
@@ -123,25 +123,25 @@ namespace Allup.Areas.AdminPanel.Controllers
                 }
             }
 
-            if (!category.Image.IsImage())
-            {
-                ModelState.AddModelError("Image", "Please add only image");
-                return View();
-            }
-
             dbCategory.Name = category.Name;
 
             if (category.Image == null)
             {
-                dbCategory.ImageURL = dbCategory.ImageURL;
+                category.Image = dbCategory.Image;
             }
 
             if (category.Image != null)
             {
-                dbCategory.ImageURL = await category.Image.SaveImage(_env, "assets", "images");
-            }
+                if (!category.Image.IsImage())
+                {
+                    ModelState.AddModelError("Image", "Please add only image");
+                    return View();
+                }
 
-            await _context.SaveChangesAsync();
+                dbCategory.ImageURL = await category.Image.SaveImageF2(_env, "assets", "images");
+
+                await _context.SaveChangesAsync();
+            }
 
             return RedirectToAction("index");
         }
