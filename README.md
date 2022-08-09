@@ -14,6 +14,7 @@
 
 ## 📦 NuGet Packages
 
+- Microsoft.AspNet.Identity.EntityFramework
 - Microsoft.AspNetCore.Identity.EntityFrameworkCore
 - Microsoft.EntityFrameworkCore
 - Microsoft.EntityFrameworkCore.Design
