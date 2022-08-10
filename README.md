@@ -1,8 +1,5 @@
-[<div align = "center" name = "readme-top">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="README-Logo.png" alt="Logo" width="80" height="80">
-  </a>
-</div>](url)
+<div align = "center" name = "readme-top">
+</div>
 
 ## 🧩 Modules
 
