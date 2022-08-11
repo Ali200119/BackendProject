@@ -35,3 +35,5 @@ You must add `appsettings.json` file
   }
 }
 ```
+
+**Seeding included**
