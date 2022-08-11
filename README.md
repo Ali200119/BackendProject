@@ -1,3 +1,7 @@
+<div align = "center" name = "readme-top">
+  <img src="README-Logo.png" alt="Logo" width="80" height="80">
+</div>
+
 ## 🧩 Modules
 
 - User
@@ -31,3 +35,5 @@ You must add `appsettings.json` file
   }
 }
 ```
+
+<p align="right"><a href="#readme-top">Back to top</a></p>
