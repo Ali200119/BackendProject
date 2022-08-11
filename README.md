@@ -1,4 +1,4 @@
-<div align="center" name="readme-top">
+<div align="center">
   <img src="README-Logo.png" alt="Logo" width="80" height="80">
 </div>
 
@@ -35,5 +35,3 @@ You must add `appsettings.json` file
   }
 }
 ```
-
-<p align="right"><a href="#readme-top">Back to top</a></p>
